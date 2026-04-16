@@ -145,6 +145,14 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
+      margin-inline: auto;
+    }
+
+    .nav-tools {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 0 0 auto;
     }
     .menu a {
       color: var(--muted);
@@ -449,7 +457,7 @@
     .promo-title {
       font-family: 'Cabinet Grotesk', 'Inter', Arial, sans-serif;
       font-size: clamp(1.8rem, 3vw, 3rem);
-      line-height: .98;
+      line-height: 1.08;
       margin: 0 0 16px;
       color: var(--accent);
       letter-spacing: -.03em;
@@ -983,16 +991,26 @@
       border: none;
       cursor: pointer;
       color: #fff;
-      background: rgba(255,255,255,.12);
+      background: rgba(8,27,75,.92);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       box-shadow: 0 14px 35px rgba(0,0,0,.18);
-      transition: transform var(--transition), background var(--transition);
+      transition: background var(--transition), opacity var(--transition), box-shadow var(--transition);
+      border: 1px solid rgba(255,255,255,.22);
     }
-    .lightbox-arrow:hover, .lightbox-close:hover { transform: scale(1.05); background: rgba(255,255,255,.18); }
+    .lightbox-arrow:hover, .lightbox-close:hover { background: rgba(17,53,125,.96); box-shadow: 0 18px 36px rgba(0,0,0,.22); }
+    .lightbox-arrow:active, .lightbox-close:active { transform: translateY(-50%); }
+    .lightbox-close:active { transform: none; }
     .lightbox-arrow {
-      width: 64px; height: 64px; border-radius: 50%; font-size: 1.6rem; font-weight: 900;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 58px; height: 58px; border-radius: 50%; font-size: 1.55rem; font-weight: 900;
+      display: inline-flex; align-items: center; justify-content: center;
     }
+    .lightbox-arrow.prev { left: 14px; }
+    .lightbox-arrow.next { right: 14px; }
     .lightbox-close {
       position: absolute; top: 18px; right: 18px; z-index: 3;
       width: 48px; height: 48px; border-radius: 50%; font-size: 1.2rem; font-weight: 900;
@@ -1251,7 +1269,8 @@
       .hero-card { order: 1; }
       .promo-visual { min-height: 320px; }
       .menu { justify-content: center; }
-      .menu a, .menu .lang-toggle { padding: 10px 12px; }
+      .menu a { padding: 10px 12px; }
+      .lang-toggle { padding: 10px 12px; }
       .partner-item { width: 232px; min-height: 136px; }
       .partner-item img { height: 98px; }
     }
@@ -1260,7 +1279,8 @@
       section { padding: 24px 0; }
       .brand img { width: 190px; }
       .menu { gap: 4px; padding: 6px; }
-      .menu a, .menu .lang-toggle { font-size: .84rem; padding: 9px 10px; }
+      .menu a { font-size: .84rem; padding: 9px 10px; }
+      .lang-toggle { font-size: .84rem; }
       .hero-card, .section-card, .package-card, .contact-card, .feature-card, .video-copy, .hero-copy-box, .promo-content { padding: 18px; }
       .tagline { font-size: clamp(1.34rem, 6vw, 1.78rem); }
       .tagline .dark { letter-spacing: .025em; }
@@ -1308,26 +1328,35 @@
     }
 </style>
 <style>
-    .menu .lang-toggle {
+    .lang-toggle {
       appearance: none;
-      border: 0;
-      background: transparent;
+      border: 1px solid rgba(255,255,255,.62);
+      background: rgba(255,255,255,.46);
       color: var(--muted);
       font-size: .94rem;
       font-weight: 800;
       padding: 10px 14px;
       border-radius: 999px;
       position: relative;
-      transition: color var(--transition), background var(--transition), transform var(--transition), box-shadow var(--transition);
+      transition: color var(--transition), background var(--transition), transform var(--transition), box-shadow var(--transition), border-color var(--transition);
       cursor: pointer;
       font-family: inherit;
       min-width: 54px;
+      min-height: 46px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.82), 0 10px 24px rgba(8,27,75,.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
     }
-    .menu .lang-toggle:hover,
-    .menu .lang-toggle.active {
+    .lang-toggle:hover,
+    .lang-toggle.active {
       color: var(--text);
-      background: rgba(255,255,255,.7);
-      box-shadow: 0 8px 22px rgba(8,27,75,.08);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 12px 28px rgba(8,27,75,.10);
+      border-color: rgba(25,152,234,.24);
       transform: translateY(-1px);
     }
     .contact-link-label {
@@ -1371,9 +1400,9 @@
       direction: rtl;
     }
     body.lang-ar .nav {
-      direction: rtl;
+      direction: ltr;
     }
-    body.lang-ar .menu .lang-toggle {
+    body.lang-ar .lang-toggle {
       font-family: 'Cairo', 'Inter', Arial, sans-serif;
     }
     body.lang-ar .section-list li,
@@ -1450,7 +1479,7 @@
     body.lang-ar .btn,
     body.lang-ar .badge,
     body.lang-ar .menu a,
-    body.lang-ar .menu .lang-toggle {
+    body.lang-ar .lang-toggle {
       letter-spacing: 0;
     }
 
@@ -1461,6 +1490,10 @@
       white-space: nowrap;
       letter-spacing: .01em;
       font-family: 'Cabinet Grotesk', 'Inter', Arial, sans-serif;
+    }
+    body.lang-ar .promo-title {
+      line-height: 1.24;
+      letter-spacing: 0;
     }
     body.lang-ar .brand-inline,
     body.lang-ar .keep-together,
@@ -1480,7 +1513,7 @@
 
     @media (max-width: 760px) {
       body.lang-ar .nav {
-        direction: rtl;
+        direction: ltr;
       }
       body.lang-ar .menu {
         direction: rtl;
@@ -1532,7 +1565,9 @@
         padding: 12px 0;
         gap: 12px;
       }
+      .nav-tools { order: 1; gap: 8px; }
       .nav-toggle { display: inline-flex; order: 1; }
+      .lang-toggle { order: 2; min-width: 54px; min-height: 46px; padding: 10px 12px; font-size: .92rem; }
       .brand { order: 2; margin-inline-start: auto; }
       .brand img { width: 168px; }
       .menu {
@@ -1553,7 +1588,7 @@
         box-shadow: 0 22px 50px rgba(8,27,75,.12);
       }
       body.menu-open .menu { display: flex; }
-      .menu a, .menu .lang-toggle {
+      .menu a {
         width: 100%;
         text-align: center;
         justify-content: center;
@@ -1577,14 +1612,19 @@
       .lightbox { padding: 10px; }
       .lightbox-content { width: min(100vw - 20px, 1100px); height: min(84vh, calc(100vh - 20px)); gap: 10px; }
       .lightbox-stage { border-radius: 22px; padding: 12px; }
+      .lightbox-arrow { width: 52px; height: 52px; top: 50%; transform: translateY(-50%); }
+      .lightbox-arrow.prev { left: 12px; }
+      .lightbox-arrow.next { right: 12px; }
       .hero-card, .section-card, .package-card, .contact-card, .feature-card, .video-copy, .hero-copy-box, .promo-content { padding: 18px; }
       .reveal { opacity: 1 !important; transform: none !important; }
     }
 
     @media (max-width: 420px) {
-      .brand img { width: 154px; }
+      .brand img { width: 148px; }
+      .lang-toggle { min-width: 50px; min-height: 44px; padding: 9px 10px; font-size: .88rem; }
       .gallery-grid { grid-template-columns: 1fr !important; }
       .gallery-item.has-image, .placeholder-card { min-height: 192px !important; }
+      .promo-title { line-height: 1.22; max-width: none; }
     }
 
     body.lang-ar .brand-inline,
@@ -1596,7 +1636,10 @@
 <body>
 <header class="topbar">
 <div class="container nav">
-<button aria-controls="siteMenu" aria-expanded="false" aria-label="Open menu" class="nav-toggle" id="navToggle" type="button"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button><a aria-label="Legacy Pigeon home" class="brand" href="#home">
+<div class="nav-tools">
+<button aria-controls="siteMenu" aria-expanded="false" aria-label="Open menu" class="nav-toggle" id="navToggle" type="button"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+<button aria-label="Switch language" class="lang-toggle header-lang-toggle" id="langToggle" type="button">AR</button>
+</div><a aria-label="Legacy Pigeon home" class="brand" href="#home">
 <img alt="Legacy Pigeon logo" decoding="async" draggable="false" fetchpriority="high" loading="eager" src="assets/logo_legacy.webp"/>
 </a>
 <nav aria-label="Primary" class="menu" id="siteMenu">
@@ -1607,7 +1650,6 @@
 <a href="#packages">Packages</a>
 <a href="#partners">Partners</a>
 <a href="#contact">Contact</a>
-<button aria-label="Switch language" class="lang-toggle" id="langToggle" type="button">AR</button>
 </nav>
 </div>
 </header>
@@ -2131,8 +2173,11 @@
         if (!item) return;
         const src = getSource(item);
         const title = item.dataset.title || item.querySelector('span')?.textContent || 'Gallery Image';
+        const hasMultiple = currentGallery.length > 1;
         lightboxTitle.textContent = title;
         lightboxCounter.textContent = (currentIndex + 1) + ' / ' + currentGallery.length;
+        prevBtn.style.display = hasMultiple ? 'inline-flex' : 'none';
+        nextBtn.style.display = hasMultiple ? 'inline-flex' : 'none';
 
         if (src) {
           lightboxImage.src = src;
@@ -2295,7 +2340,7 @@
       e.stopPropagation();
       setMenu(!document.body.classList.contains('menu-open'));
     });
-    menu.querySelectorAll('a, button').forEach(el => el.addEventListener('click', () => {
+    menu.querySelectorAll('a').forEach(el => el.addEventListener('click', () => {
       if (mql.matches) setMenu(false);
     }));
     document.addEventListener('click', function (e) {
