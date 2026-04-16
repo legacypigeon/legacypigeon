@@ -116,10 +116,11 @@
       min-height: 86px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+      justify-content: flex-start;
+      gap: 18px;
     }
     .brand {
+      order: 2;
       display: flex;
       align-items: center;
       gap: 14px;
@@ -133,6 +134,7 @@
     .brand:hover { transform: translateY(-1px) scale(1.01); }
     .brand img { width: 230px; height: auto; object-fit: contain; display: block; flex: 0 0 auto; }
     .menu {
+      order: 3;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -145,14 +147,21 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      margin-inline: auto;
+      margin-inline-start: auto;
+      margin-inline-end: 0;
     }
 
     .nav-tools {
+      order: 1;
       display: flex;
       align-items: center;
       gap: 10px;
       flex: 0 0 auto;
+      margin-inline-end: 8px;
+    }
+    @media (min-width: 761px) {
+      .nav-tools { margin-inline-end: 10px; }
+      .brand { margin-inline-end: 18px; }
     }
     .menu a {
       color: var(--muted);
@@ -942,13 +951,15 @@
       width: min(1100px, calc(100vw - 48px));
       height: min(88vh, calc(100vh - 48px));
       display: grid;
-      grid-template-columns: 72px minmax(0, 1fr) 72px;
+      grid-template-columns: 72px minmax(420px, 1fr) 72px;
       gap: 16px;
-      align-items: center;
+      align-items: stretch;
     }
     .lightbox-stage {
+      width: 100%;
       height: 100%;
-      min-height: 0;
+      min-width: 0;
+      min-height: 320px;
       max-height: min(88vh, calc(100vh - 48px));
       border-radius: 30px;
       overflow: hidden;
@@ -1001,6 +1012,7 @@
     .lightbox-arrow:hover, .lightbox-close:hover { background: rgba(17,53,125,.96); box-shadow: 0 18px 36px rgba(0,0,0,.22); }
     .lightbox-arrow:active, .lightbox-close:active { transform: translateY(-50%); }
     .lightbox-close:active { transform: none; }
+    .lightbox-arrow[hidden] { display: none !important; }
     .lightbox-arrow {
       position: absolute;
       top: 50%;
@@ -1335,14 +1347,15 @@
       color: var(--muted);
       font-size: .94rem;
       font-weight: 800;
-      padding: 10px 14px;
+      padding: 10px 16px;
       border-radius: 999px;
       position: relative;
       transition: color var(--transition), background var(--transition), transform var(--transition), box-shadow var(--transition), border-color var(--transition);
       cursor: pointer;
       font-family: inherit;
-      min-width: 54px;
+      min-width: 72px;
       min-height: 46px;
+      white-space: nowrap;
       box-shadow: inset 0 1px 0 rgba(255,255,255,.82), 0 10px 24px rgba(8,27,75,.08);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -1567,7 +1580,7 @@
       }
       .nav-tools { order: 1; gap: 8px; }
       .nav-toggle { display: inline-flex; order: 1; }
-      .lang-toggle { order: 2; min-width: 54px; min-height: 46px; padding: 10px 12px; font-size: .92rem; }
+      .lang-toggle { order: 2; min-width: 66px; min-height: 46px; padding: 10px 14px; font-size: .90rem; }
       .brand { order: 2; margin-inline-start: auto; }
       .brand img { width: 168px; }
       .menu {
@@ -1611,7 +1624,7 @@
       .partner-item img { height: 70px; }
       .lightbox { padding: 10px; }
       .lightbox-content { width: min(100vw - 20px, 1100px); height: min(84vh, calc(100vh - 20px)); gap: 10px; }
-      .lightbox-stage { border-radius: 22px; padding: 12px; }
+      .lightbox-stage { border-radius: 22px; padding: 12px; min-height: 220px; }
       .lightbox-arrow { width: 52px; height: 52px; top: 50%; transform: translateY(-50%); }
       .lightbox-arrow.prev { left: 12px; }
       .lightbox-arrow.next { right: 12px; }
@@ -1621,7 +1634,7 @@
 
     @media (max-width: 420px) {
       .brand img { width: 148px; }
-      .lang-toggle { min-width: 50px; min-height: 44px; padding: 9px 10px; font-size: .88rem; }
+      .lang-toggle { min-width: 62px; min-height: 44px; padding: 9px 12px; font-size: .84rem; }
       .gallery-grid { grid-template-columns: 1fr !important; }
       .gallery-item.has-image, .placeholder-card { min-height: 192px !important; }
       .promo-title { line-height: 1.22; max-width: none; }
@@ -1638,7 +1651,7 @@
 <div class="container nav">
 <div class="nav-tools">
 <button aria-controls="siteMenu" aria-expanded="false" aria-label="Open menu" class="nav-toggle" id="navToggle" type="button"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-<button aria-label="Switch language" class="lang-toggle header-lang-toggle" id="langToggle" type="button">AR</button>
+<button aria-label="Switch language" class="lang-toggle header-lang-toggle" id="langToggle" type="button">عربي</button>
 </div><a aria-label="Legacy Pigeon home" class="brand" href="#home">
 <img alt="Legacy Pigeon logo" decoding="async" draggable="false" fetchpriority="high" loading="eager" src="assets/logo_legacy.webp"/>
 </a>
@@ -2110,7 +2123,7 @@
     body.classList.toggle('lang-ar', lang === 'ar');
 
     if (langToggle) {
-      langToggle.textContent = lang === 'ar' ? 'EN' : 'AR';
+      langToggle.textContent = lang === 'ar' ? 'English' : 'عربي';
       langToggle.classList.toggle('active', lang === 'ar');
       langToggle.setAttribute('aria-label', lang === 'ar' ? 'Switch to English' : 'التبديل إلى العربية');
       langToggle.setAttribute('title', lang === 'ar' ? 'Switch to English' : 'العربية');
@@ -2165,7 +2178,13 @@
       let currentIndex = 0;
 
       function getSource(item) {
-        return item.dataset.full || (item.querySelector('img') ? item.querySelector('img').src : '');
+        const inlineImage = item.querySelector('img');
+        const rawSrc = item.dataset.full || (inlineImage ? (inlineImage.currentSrc || inlineImage.src) : '') || '';
+        try {
+          return rawSrc ? new URL(rawSrc, window.location.href).href : '';
+        } catch (error) {
+          return rawSrc;
+        }
       }
 
       function renderLightbox() {
@@ -2176,13 +2195,21 @@
         const hasMultiple = currentGallery.length > 1;
         lightboxTitle.textContent = title;
         lightboxCounter.textContent = (currentIndex + 1) + ' / ' + currentGallery.length;
-        prevBtn.style.display = hasMultiple ? 'inline-flex' : 'none';
-        nextBtn.style.display = hasMultiple ? 'inline-flex' : 'none';
+        prevBtn.hidden = !hasMultiple;
+        nextBtn.hidden = !hasMultiple;
 
         if (src) {
+          lightboxImage.onload = function () {
+            lightboxImage.style.display = 'block';
+            lightboxPlaceholder.style.display = 'none';
+          };
+          lightboxImage.onerror = function () {
+            lightboxImage.style.display = 'none';
+            lightboxPlaceholder.style.display = 'flex';
+          };
+          lightboxImage.style.display = 'none';
+          lightboxPlaceholder.style.display = 'flex';
           lightboxImage.src = src;
-          lightboxImage.style.display = 'block';
-          lightboxPlaceholder.style.display = 'none';
         } else {
           lightboxImage.removeAttribute('src');
           lightboxImage.style.display = 'none';
