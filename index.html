@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LEGACY PIGEON | Photography &amp; Films</title>
+<meta content="Legacy Pigeon Photography &amp; Films — premium pigeon, eye, and short-form video production for champions, legends, and bloodline power." name="description"/>
+<meta content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://fonts.cdnfonts.com data: blob:; img-src 'self' data: blob:; media-src 'self' data: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap');
+    @import url('https://fonts.cdnfonts.com/css/cabinet-grotesk');
+
+    :root {
+      --bg: #edf4fb;
+      --bg-2: #e4eef9;
+      --surface: rgba(255,255,255,.78);
+      --surface-strong: rgba(255,255,255,.95);
+      --surface-2: rgba(246,250,255,.88);
+      --text: #081b4b;
+      --muted: #4d6184;
+      --line: rgba(8, 27, 75, 0.11);
+      --line-strong: rgba(25,152,234,.22);
+      --accent: #081b4b;
+      --accent-2: #1998ea;
+      --accent-3: #dce8f6;
+      --accent-4: #8bd2ff;
+      --glow-blue: rgba(25,152,234,.28);
+      --glow-navy: rgba(8,27,75,.15);
+      --shadow: 0 26px 70px rgba(8, 27, 75, 0.11);
+      --shadow-soft: 0 20px 46px rgba(8, 27, 75, 0.08);
+      --radius: 24px;
+      --max: 1220px;
+      --glass-blur: blur(22px) saturate(185%);
+      --transition: 260ms cubic-bezier(.22,1,.36,1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background:
+        radial-gradient(circle at top left, rgba(25,152,234,.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(8,27,75,.11), transparent 24%),
+        radial-gradient(circle at 20% 80%, rgba(25,152,234,.11), transparent 24%),
+        radial-gradient(circle at 80% 30%, rgba(139,210,255,.19), transparent 22%),
+        linear-gradient(180deg, #f8fbff 0%, #edf5fd 46%, #e2edf9 100%);
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      inset: auto;
+      width: 36vw;
+      height: 36vw;
+      border-radius: 50%;
+      filter: blur(55px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: .36;
+      animation: floatBlob 18s ease-in-out infinite;
+    }
+    body::before {
+      top: -12vw;
+      left: -12vw;
+      background: radial-gradient(circle, rgba(25,152,234,.24), rgba(25,152,234,0) 68%);
+    }
+    body::after {
+      right: -10vw;
+      bottom: -12vw;
+      background: radial-gradient(circle, rgba(8,27,75,.16), rgba(8,27,75,0) 68%);
+      animation-delay: -9s;
+    }
+
+    @keyframes floatBlob {
+      0%,100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2vw,-1vw,0) scale(1.06); }
+    }
+    @keyframes subtlePulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(25,152,234,.0); }
+      50% { box-shadow: 0 0 0 10px rgba(25,152,234,.0); }
+    }
+    @keyframes sheen {
+      0% { transform: translateX(-120%) skewX(-18deg); opacity: 0; }
+      12% { opacity: .7; }
+      24% { transform: translateX(220%) skewX(-18deg); opacity: 0; }
+      100% { transform: translateX(220%) skewX(-18deg); opacity: 0; }
+    }
+    @keyframes cardFloat {
+      0%,100% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin-inline: auto; position: relative; z-index: 1; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,251,255,.68);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border-bottom: 1px solid rgba(255,255,255,.65);
+      box-shadow: 0 12px 34px rgba(8,27,75,.06);
+    }
+    .nav {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      color: var(--accent);
+      transition: transform var(--transition);
+    }
+    .brand:hover { transform: translateY(-1px) scale(1.01); }
+    .brand img { width: 230px; height: auto; object-fit: contain; display: block; flex: 0 0 auto; }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.42);
+      border: 1px solid rgba(255,255,255,.58);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .menu a {
+      color: var(--muted);
+      font-size: .94rem;
+      font-weight: 800;
+      padding: 10px 14px;
+      border-radius: 999px;
+      position: relative;
+      transition: color var(--transition), background var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .menu a:hover, .menu a.active {
+      color: var(--text);
+      background: rgba(255,255,255,.7);
+      box-shadow: 0 8px 22px rgba(8,27,75,.08);
+      transform: translateY(-1px);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 13px 22px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition);
+      cursor: pointer;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: -120% auto -120% -35%;
+      width: 34%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.7), transparent);
+      transform: skewX(-18deg);
+      animation: sheen 8s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .btn > * { position: relative; z-index: 1; }
+    .btn-dark {
+      background: linear-gradient(135deg, var(--accent), #102866 45%, #1c4ea6 100%);
+      color: #fff;
+      box-shadow: 0 18px 38px rgba(8,27,75,.16);
+    }
+    .btn-light {
+      background: rgba(255,255,255,.46);
+      color: var(--accent);
+      border-color: rgba(25,152,234,.18);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-dark:hover { box-shadow: 0 24px 48px rgba(8,27,75,.22); }
+    .btn-light:hover {
+      background: rgba(255,255,255,.72);
+      border-color: rgba(25,152,234,.32);
+      box-shadow: 0 18px 35px rgba(25,152,234,.10);
+    }
+
+    section { padding: 30px 0; }
+    .hero { padding: 52px 0 24px; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; align-items: stretch; }
+
+    .hero-card, .hero-panel, .section-card, .feature-card, .package-card, .contact-card, .partner-strip, .placeholder-card, .sample-card, .service-card, .video-copy, .video-box {
+      background: linear-gradient(180deg, rgba(255,255,255,.86) 0%, rgba(245,250,255,.78) 100%);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.72);
+      box-shadow: var(--shadow);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card::before, .hero-panel::before, .section-card::before, .feature-card::before, .package-card::before, .contact-card::before, .partner-strip::before, .service-card::before, .video-copy::before, .sample-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.30), transparent 34%),
+        linear-gradient(135deg, transparent 0%, rgba(255,255,255,.10) 52%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .hero-card {
+      padding: 48px 44px 42px;
+      min-height: 660px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.82), rgba(255,255,255,.58)),
+        radial-gradient(circle at top right, rgba(25,152,234,.22), transparent 40%),
+        radial-gradient(circle at 20% 88%, rgba(8,27,75,.10), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,.34), rgba(255,255,255,.16));
+      isolation: isolate;
+    }
+    .hero-card::after {
+      content: '';
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      right: -60px;
+      bottom: -70px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(25,152,234,.22), rgba(25,152,234,0) 70%);
+      animation: floatBlob 16s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.42);
+      color: var(--accent-2);
+      font-size: .84rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255,255,255,.64);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .hero-logo { width: min(420px, 72%); margin-bottom: 22px; }
+    .tagline {
+      font-family: 'Cabinet Grotesk', 'Inter', Arial, sans-serif;
+      font-size: clamp(2rem, 3.35vw, 3.35rem);
+      line-height: .96;
+      text-transform: uppercase;
+      letter-spacing: -.03em;
+      margin: 0 0 22px;
+      max-width: none;
+      position: relative;
+      z-index: 1;
+    }
+    .tagline .dark {
+      color: var(--accent);
+      display: block;
+      font-weight: 800;
+      letter-spacing: .035em;
+      text-shadow: 0 8px 26px rgba(8,27,75,.08);
+    }
+    .tagline .light {
+      display: block;
+      font-weight: 600;
+      white-space: nowrap;
+      font-size: .565em;
+      letter-spacing: .003em;
+      background: linear-gradient(90deg, #1998ea 0%, #3bbcff 40%, #1998ea 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 8px 18px rgba(25,152,234,.12));
+    }
+
+    .subline {
+      font-size: 1.02rem;
+      color: var(--muted);
+      max-width: 67ch;
+      margin: 0 0 16px;
+      padding: 18px 18px 16px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.76), rgba(247,251,255,.60));
+      border: 1px solid rgba(255,255,255,.70);
+      box-shadow: 0 16px 34px rgba(8,27,75,.05), inset 0 1px 0 rgba(255,255,255,.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      position: relative;
+      z-index: 1;
+    }
+    .subline p {
+      margin: 0 0 12px;
+      line-height: 1.85;
+    }
+    .subline p:last-child { margin-bottom: 0; }
+    .subline strong { color: var(--accent); }
+
+    .hero-slogans {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0 10px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-slogans div {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.74), rgba(242,248,255,.62));
+      border: 1px solid rgba(255,255,255,.70);
+      font-weight: 700;
+      color: var(--text);
+      box-shadow: 0 12px 30px rgba(8,27,75,.05), inset 0 1px 0 rgba(255,255,255,.86);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .hero-slogans div:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(25,152,234,.09);
+      border-color: rgba(25,152,234,.26);
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; position: relative; z-index: 1; }
+
+    .promo-spotlight { padding: 10px 0 12px; }
+    .promo-glass {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.06fr .94fr;
+      gap: 24px;
+      padding: 24px;
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.58), rgba(255,255,255,.24)),
+        radial-gradient(circle at top left, rgba(25,152,234,.18), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(8,27,75,.10), transparent 34%);
+      border: 1px solid rgba(255,255,255,.62);
+      box-shadow: 0 24px 65px rgba(8,27,75,.08);
+      backdrop-filter: blur(22px) saturate(180%);
+      -webkit-backdrop-filter: blur(22px) saturate(180%);
+      isolation: isolate;
+    }
+    .promo-glass::after {
+      content: '';
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      top: -80px;
+      right: -80px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(25,152,234,.18), rgba(25,152,234,0) 70%);
+      animation: floatBlob 14s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .promo-visual {
+      position: relative;
+      z-index: 1;
+      min-height: 430px;
+      border-radius: 28px;
+      overflow: hidden;
+      cursor: zoom-in;
+      background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(241,248,255,.90));
+      border: 1px solid rgba(255,255,255,.72);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.85),
+        0 18px 40px rgba(8,27,75,.08);
+    }
+    .promo-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), transparent 35%);
+      pointer-events: none;
+    }
+    .promo-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 1.4s ease;
+    }
+    .promo-glass:hover .promo-visual img { transform: scale(1.035); }
+    .promo-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6px 6px 6px 2px;
+    }
+    .promo-kicker {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 9px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      background: rgba(255,255,255,.48);
+      border: 1px solid rgba(255,255,255,.72);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.92);
+      color: var(--accent-2);
+      font-size: .84rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .promo-title {
+      font-family: 'Cabinet Grotesk', 'Inter', Arial, sans-serif;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: .98;
+      margin: 0 0 16px;
+      color: var(--accent);
+      letter-spacing: -.03em;
+      max-width: 15ch;
+    }
+    .promo-title strong { color: var(--accent-2); font-weight: 800; }
+    .promo-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+      line-height: 1.85;
+      max-width: 58ch;
+      padding: 16px 18px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.40);
+      border: 1px solid rgba(255,255,255,.62);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.84),
+        0 14px 32px rgba(8,27,75,.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .promo-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .promo-badges span {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.50);
+      border: 1px solid rgba(255,255,255,.70);
+      color: var(--text);
+      font-weight: 700;
+      font-size: .92rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .promo-badges span:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 28px rgba(25,152,234,.10);
+    }
+
+    .hero-panel {
+      padding: 16px;
+      display: grid;
+      gap: 16px;
+      min-height: 660px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.80) 0%, rgba(247,251,255,.70) 100%),
+        radial-gradient(circle at top right, rgba(139,210,255,.18), transparent 36%);
+    }
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 16px; min-height: 248px; }
+
+    .hero-feature-trigger {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 100%;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      cursor: zoom-in;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(8,27,75,.10);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .hero-feature-trigger:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 26px 52px rgba(8,27,75,.14);
+    }
+    .hero-feature-image {
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      max-height: none;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.68);
+      display: block;
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .hero-feature-trigger:hover .hero-feature-image {
+      transform: scale(1.015);
+    }
+
+    .hero-shot, .hero-video {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      min-height: 220px;
+      background:
+        linear-gradient(145deg, rgba(8,27,75,.86), rgba(25,152,234,.72)),
+        radial-gradient(circle at top right, rgba(255,255,255,.16), transparent 38%);
+      color: #fff;
+      display: flex;
+      align-items: end;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.24);
+      box-shadow: 0 20px 48px rgba(8,27,75,.16);
+      transition: transform var(--transition), box-shadow var(--transition);
+      isolation: isolate;
+    }
+    .hero-shot:hover, .hero-video:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 56px rgba(8,27,75,.22);
+    }
+    .hero-shot::before, .hero-video::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.08), transparent),
+        radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 36%);
+    }
+    .hero-shot > div, .hero-video > div { position: relative; z-index: 1; }
+    .hero-shot strong, .hero-video strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+    .hero-shot span, .hero-video span { color: rgba(255,255,255,.88); font-size: .95rem; }
+
+    .hero-copy-box {
+      min-height: 360px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.82) 0%, rgba(243,249,255,.68) 100%),
+        radial-gradient(circle at top right, rgba(25,152,234,.14), transparent 36%);
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.68);
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 18px 40px rgba(8,27,75,.05);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .hero-copy-box::after {
+      content: '';
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(25,152,234,.16), transparent 66%);
+      right: -40px;
+      top: -40px;
+    }
+    .hero-copy-box h3 {
+      position: relative;
+      z-index: 1;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.9rem;
+      line-height: 1.08;
+      margin: 0 0 12px;
+    }
+    .hero-copy-box p {
+      position: relative;
+      z-index: 1;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .feature-card {
+      padding: 24px;
+      text-align: center;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.80) 0%, rgba(247,251,255,.70) 100%),
+        radial-gradient(circle at top center, rgba(25,152,234,.10), transparent 40%);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 52px rgba(8,27,75,.11);
+      border-color: rgba(25,152,234,.24);
+    }
+    .feature-card strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      color: var(--accent-2);
+      line-height: 1;
+      margin-bottom: 10px;
+      text-shadow: 0 8px 22px rgba(25,152,234,.12);
+    }
+    .feature-card span { display: block; color: var(--muted); font-weight: 700; font-size: .95rem; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+    h2, h3, h4, p { margin: 0; }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.75rem);
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: .35px;
+      margin-bottom: 8px;
+      color: var(--accent);
+      position: relative;
+      display: inline-block;
+    }
+    h2::after {
+      content: '';
+      display: block;
+      width: 72px;
+      height: 5px;
+      margin-top: 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent-2), rgba(25,152,234,.16));
+      box-shadow: 0 8px 18px rgba(25,152,234,.18);
+    }
+    .section-head p, .section-card p, .contact-card p, .package-card p { color: var(--muted); }
+
+    .section-card {
+      padding: 30px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.80) 0%, rgba(248,251,255,.72) 100%),
+        radial-gradient(circle at top right, rgba(25,152,234,.08), transparent 38%);
+    }
+
+    .split-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .section-list { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 12px; }
+    .section-list li {
+      padding-left: 18px;
+      position: relative;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .section-list li::before { content: '•'; position: absolute; left: 0; color: var(--accent-2); font-weight: 900; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .service-card {
+      padding: 24px;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.80) 0%, rgba(248,251,255,.70) 100%),
+        radial-gradient(circle at top left, rgba(139,210,255,.14), transparent 42%);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 54px rgba(8,27,75,.11);
+      border-color: rgba(25,152,234,.24);
+    }
+    .service-card strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 10px;
+      font-size: 1.08rem;
+      color: var(--accent);
+    }
+    .service-card p { color: var(--muted); font-size: .96rem; }
+
+    .gallery-wrap { display: grid; gap: 20px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .placeholder-card {
+      min-height: 142px;
+      padding: 16px;
+      background:
+        linear-gradient(145deg, rgba(8,27,75,.92), rgba(25,152,234,.76)),
+        radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 36%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      position: relative;
+      overflow: hidden;
+      appearance: none;
+      border: 1px solid rgba(255,255,255,.22);
+      text-align: left;
+      cursor: pointer;
+      width: 100%;
+      transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+      box-shadow: 0 18px 34px rgba(8,27,75,.14);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      isolation: isolate;
+    }
+    .placeholder-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 46px rgba(8,27,75,.18);
+      filter: saturate(1.03);
+    }
+    .placeholder-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.08), transparent),
+        radial-gradient(circle at top right, rgba(255,255,255,.16), transparent 36%);
+    }
+    .placeholder-card::after {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: -42%;
+      width: 28%;
+      height: 140%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+      transform: skewX(-18deg);
+      animation: sheen 9s linear infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .placeholder-card span, .placeholder-card small { position: relative; z-index: 2; }
+    .placeholder-card span { font-family: 'Montserrat', sans-serif; font-size: .98rem; margin-bottom: 6px; }
+    .placeholder-card small { color: rgba(255,255,255,.82); font-size: .82rem; }
+
+    .gallery-item.has-image {
+      padding: 0;
+      min-height: 220px;
+      justify-content: end;
+    }
+    .gallery-item.has-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      display: block;
+      transition: transform .9s ease, filter .4s ease;
+    }
+    .gallery-item.has-image:hover img {
+      transform: scale(1.05);
+      filter: contrast(1.02) saturate(1.04);
+    }
+    .gallery-item.has-image span,
+    .gallery-item.has-image small {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      font-size: 0 !important;
+      line-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .video-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .video-box {
+      min-height: 340px;
+      border-radius: 26px;
+      padding: 0;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.22);
+    }
+    .video-box video {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      display: block;
+      object-fit: cover;
+      border-radius: 26px;
+      background: #0b1e53;
+    }
+    .video-copy {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.82) 0%, rgba(248,251,255,.72) 100%),
+        radial-gradient(circle at top right, rgba(25,152,234,.08), transparent 38%);
+      border-radius: 26px;
+      padding: 28px;
+    }
+    .video-copy ul { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 12px; }
+    .video-copy li { padding-left: 18px; position: relative; color: var(--text); font-weight: 600; }
+    .video-copy li::before { content: '•'; position: absolute; left: 0; color: var(--accent-2); font-weight: 900; }
+
+    .packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .package-card {
+      padding: 28px;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.82) 0%, rgba(247,251,255,.70) 100%),
+        radial-gradient(circle at top right, rgba(25,152,234,.08), transparent 36%);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .package-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 55px rgba(8,27,75,.12);
+      border-color: rgba(25,152,234,.24);
+    }
+    .badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: linear-gradient(135deg, var(--accent-2), #2db7ff);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 800;
+      box-shadow: 0 14px 26px rgba(25,152,234,.18);
+      animation: subtlePulse 3s ease-in-out infinite;
+    }
+    .package-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.18rem;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+    .package-price {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--accent-2);
+      margin-bottom: 10px;
+      text-shadow: 0 8px 18px rgba(25,152,234,.12);
+    }
+    .vat-note { color: var(--muted); font-size: .88rem; font-weight: 700; margin-bottom: 14px; }
+    .package-list { list-style: none; padding: 0; margin: 14px 0 18px; display: grid; gap: 10px; }
+    .package-list li { padding-left: 18px; position: relative; color: var(--text); font-weight: 600; }
+    .package-list li::before { content: '•'; position: absolute; left: 0; color: var(--accent-2); font-weight: 900; }
+
+    .packages-cta {
+      margin-top: 22px;
+      padding: 22px 24px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.78) 0%, rgba(242,248,255,.68) 100%);
+      border: 1px solid rgba(255,255,255,.7);
+      box-shadow: 0 16px 34px rgba(8,27,75,.06), inset 0 1px 0 rgba(255,255,255,.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      text-align: center;
+    }
+    .packages-cta p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    .sample-card {
+      min-height: 210px;
+      padding: 20px;
+      background:
+        linear-gradient(145deg, rgba(8,27,75,.90), rgba(25,152,234,.74)),
+        radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 38%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+    }
+    .sample-card * { position: relative; z-index: 1; }
+    .sample-card strong { display: block; font-family: 'Montserrat', sans-serif; font-size: 1rem; margin-bottom: 8px; }
+    .sample-card small { color: rgba(255,255,255,.86); font-size: .85rem; }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(4,12,34,.80), rgba(4,12,34,.92)),
+        radial-gradient(circle at top right, rgba(25,152,234,.18), transparent 34%);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-backdrop { position: absolute; inset: 0; }
+    .lightbox-content {
+      position: relative;
+      z-index: 1;
+      width: min(1100px, calc(100vw - 48px));
+      height: min(88vh, calc(100vh - 48px));
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr) 72px;
+      gap: 16px;
+      align-items: center;
+    }
+    .lightbox-stage {
+      height: 100%;
+      min-height: 0;
+      max-height: min(88vh, calc(100vh - 48px));
+      border-radius: 30px;
+      overflow: hidden;
+      position: relative;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 24px 70px rgba(0,0,0,.26);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .lightbox-stage img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      background: transparent;
+      display: block;
+      margin: 0 auto;
+    }
+    .lightbox-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: #fff; text-align: center; padding: 30px;
+      background: linear-gradient(145deg, rgba(8,27,75,.98), rgba(25,152,234,.90));
+    }
+    .lightbox-placeholder strong {
+      display: block; font-family: 'Montserrat', sans-serif; font-size: 1.5rem; margin-bottom: 12px;
+    }
+    .lightbox-placeholder span {
+      color: rgba(255,255,255,.86); max-width: 46ch;
+    }
+    .lightbox-arrow,
+    .lightbox-close {
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      background: rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 14px 35px rgba(0,0,0,.18);
+      transition: transform var(--transition), background var(--transition);
+    }
+    .lightbox-arrow:hover, .lightbox-close:hover { transform: scale(1.05); background: rgba(255,255,255,.18); }
+    .lightbox-arrow {
+      width: 64px; height: 64px; border-radius: 50%; font-size: 1.6rem; font-weight: 900;
+    }
+    .lightbox-close {
+      position: absolute; top: 18px; right: 18px; z-index: 3;
+      width: 48px; height: 48px; border-radius: 50%; font-size: 1.2rem; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(8,27,75,.88); color: #fff; border: 1px solid rgba(255,255,255,.24);
+    }
+    .lightbox-caption { display: none !important; }
+
+    .partner-strip {
+      overflow: hidden;
+      padding: 18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.80) 0%, rgba(247,251,255,.72) 100%),
+        radial-gradient(circle at top left, rgba(25,152,234,.08), transparent 30%);
+    }
+    .partner-track {
+      display: flex;
+      gap: 22px;
+      width: max-content;
+      animation: scroll 28s linear infinite;
+      will-change: transform;
+    }
+    .partner-item {
+      width: 270px;
+      min-height: 150px;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.94) 0%, rgba(248,252,255,.86) 100%),
+        radial-gradient(circle at top center, rgba(25,152,234,.09), transparent 54%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      text-align: center;
+      box-shadow: 0 18px 40px rgba(8,27,75,.08);
+      flex: 0 0 auto;
+      border: 1px solid rgba(255,255,255,.82);
+      overflow: hidden;
+      cursor: pointer;
+      transform: translateZ(0);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
+    }
+    .partner-item:hover {
+      transform: translateY(-3px) scale(1.012);
+      box-shadow: 0 24px 50px rgba(8,27,75,.11);
+      border-color: rgba(25,152,234,.28);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(248,252,255,.88) 100%),
+        radial-gradient(circle at top center, rgba(25,152,234,.12), transparent 54%);
+    }
+    .partner-item:focus-visible {
+      outline: none;
+      border-color: rgba(25,152,234,.36);
+      box-shadow: 0 0 0 4px rgba(25,152,234,.12), 0 24px 50px rgba(8,27,75,.11);
+    }
+    .partner-item img {
+      width: 100%;
+      height: 116px;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      transition: transform var(--transition), filter var(--transition);
+    }
+    .partner-item:hover img { transform: scale(1.04); filter: saturate(1.04); }
+    .partner-item.is-pressed,
+    .partner-item:active { transform: translateY(-1px) scale(1.024); }
+    .partner-item.is-pressed img,
+    .partner-item:active img { transform: scale(1.06); }
+    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .contact-card {
+      padding: 28px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.82) 0%, rgba(248,251,255,.72) 100%),
+        radial-gradient(circle at top right, rgba(25,152,234,.08), transparent 36%);
+    }
+    .contact-list { display: grid; gap: 12px; margin-top: 18px; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.46);
+      border: 1px solid rgba(255,255,255,.70);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.80);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .contact-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(8,27,75,.06);
+      border-color: rgba(25,152,234,.24);
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      color: inherit;
+      transition: .2s ease;
+    }
+    .contact-link-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 170px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      background: linear-gradient(135deg, var(--accent), #102866);
+      color: #fff;
+      white-space: nowrap;
+      box-shadow: 0 16px 30px rgba(8,27,75,.14);
+      transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+    }
+    .contact-item:hover .contact-link-label {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 38px rgba(8,27,75,.18);
+      filter: saturate(1.03);
+    }
+    .contact-item strong { display: block; font-size: .95rem; margin-bottom: 3px; }
+    .contact-item span { color: var(--muted); font-size: .92rem; }
+
+    footer { padding: 22px 0 40px; }
+    .footer-box {
+      background:
+        linear-gradient(135deg, rgba(8,27,75,.94) 0%, rgba(16,40,102,.92) 58%, rgba(25,152,234,.88) 140%);
+      color: #fff;
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: 0 24px 58px rgba(8,27,75,.18);
+      border: 1px solid rgba(255,255,255,.10);
+      position: relative;
+      overflow: hidden;
+    }
+    .footer-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.08), transparent 35%),
+        radial-gradient(circle at top right, rgba(255,255,255,.12), transparent 28%);
+      pointer-events: none;
+    }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 24px; align-items: start; position: relative; z-index: 1; }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: .6px;
+      margin-bottom: 14px;
+    }
+    .footer-brand img { width: 270px; height: auto; object-fit: contain; display: block; }
+    .footer-note { color: rgba(255,255,255,.76); line-height: 1.9; max-width: 46ch; }
+    .brand-inline { white-space: nowrap; direction: ltr; unicode-bidi: isolate; display: inline-block; }
+    .keep-together { white-space: nowrap; display: inline-block; }
+    footer ul { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 8px; }
+    footer a { color: rgba(255,255,255,.86); }
+    .copyright {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.72);
+      font-size: .92rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px) scale(.985);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1);
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid, .split-2, .video-showcase, .contact-grid, .packages, .footer-grid, .services-grid, .gallery-grid, .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-card, .hero-panel { min-height: unset; }
+      .promo-glass { grid-template-columns: 1fr; }
+      .promo-visual { min-height: 360px; }
+      .promo-title { max-width: none; }
+      .menu { gap: 6px; }
+      .partner-item { width: 240px; min-height: 138px; }
+      .partner-item img { height: 102px; }
+    }
+    @media (max-width: 760px) {
+      body::before, body::after { width: 56vw; height: 56vw; opacity: .32; }
+
+      .tagline {
+        font-size: clamp(1.48rem, 5.5vw, 2rem);
+      }
+
+      .lightbox-content { grid-template-columns: 1fr; }
+      .lightbox-arrow {
+        position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+        width: 52px; height: 52px;
+      }
+      .lightbox-arrow.prev { left: 8px; }
+      .lightbox-arrow.next { right: 8px; }
+      .lightbox-stage {
+        height: min(76vh, calc(100vh - 32px));
+        min-height: 0;
+      }
+      .nav { flex-direction: column; justify-content: center; padding: 16px 0; }
+      .menu {
+        width: 100%;
+        border-radius: 22px;
+        justify-content: center;
+      }
+      .tagline .light {
+        white-space: nowrap;
+        font-size: .72em;
+      }
+      .tagline .dark {
+        letter-spacing: .04em;
+      }
+      .hero-slogans { grid-template-columns: 1fr; }
+      .menu a { font-size: .9rem; }
+      .hero-grid, .split-2, .video-showcase, .contact-grid, .packages, .footer-grid, .services-grid, .gallery-grid, .stats, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .hero-card, .section-card, .package-card, .contact-card, .feature-card, .video-copy, .hero-copy-box { padding: 22px; }
+      .hero-logo { width: min(320px, 100%); }
+      .promo-glass { padding: 16px; gap: 16px; border-radius: 26px; }
+      .promo-visual { min-height: 260px; border-radius: 22px; }
+      .promo-title { font-size: 1.65rem; }
+      .promo-copy { font-size: .98rem; padding: 14px 16px; }
+      .contact-item { flex-direction: column; align-items: start; }
+      .gallery-grid { gap: 14px; }
+      .placeholder-card { min-height: 180px; }
+      .gallery-item.has-image { min-height: 250px; }
+      .section-head { align-items: start; flex-direction: column; }
+      .footer-box { border-radius: 26px; padding: 24px; }
+      .partner-item { width: 220px; min-height: 132px; }
+      .partner-item img { height: 94px; }
+    }
+
+    @media (max-width: 980px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-panel { order: 2; }
+      .hero-card { order: 1; }
+      .promo-visual { min-height: 320px; }
+      .menu { justify-content: center; }
+      .menu a, .menu .lang-toggle { padding: 10px 12px; }
+      .partner-item { width: 232px; min-height: 136px; }
+      .partner-item img { height: 98px; }
+    }
+    @media (max-width: 640px) {
+      .container { width: min(var(--max), calc(100% - 18px)); }
+      section { padding: 24px 0; }
+      .brand img { width: 190px; }
+      .menu { gap: 4px; padding: 6px; }
+      .menu a, .menu .lang-toggle { font-size: .84rem; padding: 9px 10px; }
+      .hero-card, .section-card, .package-card, .contact-card, .feature-card, .video-copy, .hero-copy-box, .promo-content { padding: 18px; }
+      .tagline { font-size: clamp(1.34rem, 6vw, 1.78rem); }
+      .tagline .dark { letter-spacing: .025em; }
+      .tagline .light { font-size: .66em; letter-spacing: .015em; }
+      .subline { padding: 14px; }
+      .hero-slogans div { padding: 12px 14px; }
+      .promo-visual { min-height: 230px; }
+      .partner-item { width: 188px; min-height: 116px; border-radius: 20px; }
+      .partner-item img { height: 72px; }
+      .contact-link { width: 100%; justify-content: center; }
+      .footer-brand img { width: 220px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  
+    .subline p,
+    .promo-copy,
+    .section-card p,
+    .contact-card p,
+    .footer-note {
+      text-wrap: pretty;
+    }
+    .tagline .dark,
+    .tagline .light {
+      text-wrap: balance;
+    }
+
+</style>
+<style>
+    img, video {
+      -webkit-user-drag: none;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
+</style>
+<style>
+    .menu .lang-toggle {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: .94rem;
+      font-weight: 800;
+      padding: 10px 14px;
+      border-radius: 999px;
+      position: relative;
+      transition: color var(--transition), background var(--transition), transform var(--transition), box-shadow var(--transition);
+      cursor: pointer;
+      font-family: inherit;
+      min-width: 54px;
+    }
+    .menu .lang-toggle:hover,
+    .menu .lang-toggle.active {
+      color: var(--text);
+      background: rgba(255,255,255,.7);
+      box-shadow: 0 8px 22px rgba(8,27,75,.08);
+      transform: translateY(-1px);
+    }
+    .contact-link-label {
+      color: #fff !important;
+    }
+    body.lang-ar {
+      font-family: 'Cairo', 'Inter', Arial, sans-serif;
+    }
+    body.lang-ar .hero-card,
+    body.lang-ar .hero-copy-box,
+    body.lang-ar .promo-content,
+    body.lang-ar .section-card,
+    body.lang-ar .service-card,
+    body.lang-ar .video-copy,
+    body.lang-ar .contact-card,
+    body.lang-ar .footer-box,
+    body.lang-ar .packages-cta,
+    body.lang-ar .section-head,
+    body.lang-ar .feature-card,
+    body.lang-ar .package-card {
+      text-align: right;
+    }
+    body.lang-ar .tagline,
+    body.lang-ar h2,
+    body.lang-ar h3,
+    body.lang-ar h4,
+    body.lang-ar p,
+    body.lang-ar .eyebrow,
+    body.lang-ar .promo-kicker,
+    body.lang-ar .promo-copy,
+    body.lang-ar .promo-title,
+    body.lang-ar .promo-badges,
+    body.lang-ar .hero-actions,
+    body.lang-ar .hero-slogans,
+    body.lang-ar .footer-note,
+    body.lang-ar .copyright {
+      direction: rtl;
+      text-align: right;
+    }
+    body.lang-ar .menu {
+      direction: rtl;
+    }
+    body.lang-ar .nav {
+      direction: rtl;
+    }
+    body.lang-ar .menu .lang-toggle {
+      font-family: 'Cairo', 'Inter', Arial, sans-serif;
+    }
+    body.lang-ar .section-list li,
+    body.lang-ar .package-list li,
+    body.lang-ar .video-copy li {
+      padding-left: 0;
+      padding-right: 18px;
+      text-align: right;
+    }
+    body.lang-ar .section-list li::before,
+    body.lang-ar .package-list li::before,
+    body.lang-ar .video-copy li::before {
+      left: auto;
+      right: 0;
+    }
+    body.lang-ar .contact-item,
+    body.lang-ar .contact-link {
+      direction: rtl;
+      text-align: right;
+    }
+    body.lang-ar .contact-item > div {
+      text-align: right;
+    }
+    body.lang-ar .footer-grid {
+      direction: rtl;
+    }
+    body.lang-ar .footer-grid ul,
+    body.lang-ar .footer-grid li,
+    body.lang-ar .footer-grid a {
+      text-align: right;
+    }
+    body.lang-ar .partner-strip {
+      direction: ltr;
+    }
+    body.lang-ar .partner-track {
+      animation-direction: normal;
+      justify-content: flex-start;
+    }
+    body.lang-ar .badge {
+      right: auto;
+      left: 18px;
+    }
+    body.lang-ar .tagline .dark,
+    body.lang-ar .footer-note .brand-inline,
+    body.lang-ar .promo-kicker .brand-inline,
+    body.lang-ar .promo-title .brand-inline,
+    body.lang-ar .section-head .brand-inline,
+    body.lang-ar p .brand-inline,
+    body.lang-ar h2 .brand-inline,
+    body.lang-ar h3 .brand-inline,
+    body.lang-ar li .brand-inline,
+    body.lang-ar .contact-card .brand-inline {
+      white-space: nowrap;
+      direction: ltr;
+      unicode-bidi: isolate;
+      display: inline-block;
+    }
+    body.lang-ar .tagline .dark {
+      direction: ltr;
+      unicode-bidi: isolate;
+      display: block;
+    }
+    body.lang-ar .footer-note {
+      unicode-bidi: plaintext;
+      line-height: 2;
+    }
+    body.lang-ar .lightbox-placeholder {
+      direction: rtl;
+      text-align: center;
+    }
+    body.lang-ar .hero-slogans div,
+    body.lang-ar .promo-badges span,
+    body.lang-ar .contact-link-label,
+    body.lang-ar .btn,
+    body.lang-ar .badge,
+    body.lang-ar .menu a,
+    body.lang-ar .menu .lang-toggle {
+      letter-spacing: 0;
+    }
+
+    body.lang-ar .tagline .light {
+      direction: ltr;
+      unicode-bidi: isolate;
+      display: block;
+      white-space: nowrap;
+      letter-spacing: .01em;
+      font-family: 'Cabinet Grotesk', 'Inter', Arial, sans-serif;
+    }
+    body.lang-ar .brand-inline,
+    body.lang-ar .keep-together,
+    body.lang-ar .tagline .dark,
+    body.lang-ar .tagline .light {
+      word-break: keep-all;
+      overflow-wrap: normal;
+    }
+    body.lang-ar .footer-note {
+      unicode-bidi: plaintext;
+      line-height: 2.05;
+      font-size: 1rem;
+    }
+    body.lang-ar .footer-note .keep-together {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 760px) {
+      body.lang-ar .nav {
+        direction: rtl;
+      }
+      body.lang-ar .menu {
+        direction: rtl;
+      }
+    }
+</style></head>
+<body>
+<header class="topbar">
+<div class="container nav">
+<a aria-label="Legacy Pigeon home" class="brand" href="#home">
+<img alt="Legacy Pigeon logo" draggable="false" src="assets/logo_legacy.png"/>
+</a>
+<nav class="menu">
+<a class="active" href="#home">Home</a>
+<a href="#eye-photos">Eye Photos</a>
+<a href="#pigeon-photos">Pigeon Photos</a>
+<a href="#video">Short Video</a>
+<a href="#packages">Packages</a>
+<a href="#partners">Partners</a>
+<a href="#contact">Contact</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle" type="button">AR</button>
+</nav>
+</div>
+</header>
+<main>
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div class="hero-card">
+<div class="tagline"><span class="dark">Legacy Pigeon</span><span class="light">Photography & Films</span></div>
+<div class="subline">
+<p>For nearly <strong>8 years</strong>, Legacy Pigeon has been part of the visual language of race-pigeon culture — from the Middle East to serious fanciers across the world. We are proud to be among the early specialists dedicated to premium pigeon and eye photography, with a recognizable creative fingerprint built on detail, elegance, and consistency.</p>
+<p>Across this journey, we have photographed <strong>close to 20,000 birds</strong> and worked with clients from <strong>Egypt, Kuwait, Saudi Arabia, the UAE, Qatar, the United Kingdom, Denmark, Belgium, Germany</strong>, and many more. We have also collaborated with respected names such as <strong>PIPA</strong>, <strong>A&amp;W Pigeon Auctions</strong>, <strong>Pyramids One Loft Race</strong>, <strong>Elmogy One Loft Race</strong>, and <strong>Derby Aal Nagib</strong> — delivering imagery that gives every bird a stronger presence, a premium identity, and a story worth remembering.</p>
+</div>
+<div class="hero-slogans"><div>8+ years of proven field experience</div><div>Nearly 20,000 birds photographed</div><div>Trusted across the Middle East &amp; Europe</div><div>Premium visuals for auctions, lofts, and champions</div></div>
+<div class="hero-actions">
+<a class="btn btn-dark" href="#packages">View Packages</a>
+<a class="btn btn-light" href="#contact">Contact Us</a>
+</div>
+</div>
+<div class="hero-panel">
+<div class="grid-2">
+<button aria-label="Open Legacy Pigeon showcase image" class="hero-feature-trigger" data-full="assets/hero_box.webp" data-gallery="hero-showcase" data-title="Legacy Pigeon Hero Showcase" type="button"><img alt="Legacy Pigeon premium pigeon and eye photography sample" class="hero-feature-image" draggable="false" src="assets/hero_box.webp"/></button>
+</div>
+<div class="hero-copy-box">
+<h3>Built for serious fanciers, elite lofts, and premium auctions.</h3>
+<p>From razor-sharp eye photography to elegant full-body portraits, we create images that elevate pedigree, beauty, structure, and presentation.</p>
+<p>Every project is produced with professional lenses, controlled lighting, careful retouching, and a polished delivery standard designed to make each bird stand out at first glance.</p>
+</div>
+</div>
+</div>
+</section>
+<section aria-label="Legacy Pigeon premium visual showcase" class="promo-spotlight">
+<div class="container">
+<div class="promo-glass">
+<div class="promo-visual" data-full="assets/promo_glass_feature.webp" data-gallery="promo-showcase" data-title="Legacy Pigeon Premium Showcase">
+<img alt="Legacy Pigeon premium pigeon and eye showcase" draggable="false" src="assets/promo_glass_feature.webp"/>
+</div>
+<div class="promo-content">
+<span class="promo-kicker">Stand Out with Legacy Pigeon</span>
+<h2 class="promo-title">If you want your birds to <strong>stand out, look exceptional, and leave a lasting impression</strong>, Legacy Pigeon is the ideal visual solution.</h2>
+<p class="promo-copy">We present each bird with premium clarity, refined finishing, and a luxury visual style designed for serious fanciers, lofts, websites, and auctions. Your birds deserve more than simple photos — they deserve imagery that gives them real presence.</p>
+<div class="promo-badges">
+<span>Premium Presence</span>
+<span>Luxury Finishing</span>
+<span>Auction-Ready Visuals</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="container stats">
+<div class="feature-card"><strong>3</strong><span>Premium package options</span></div>
+<div class="feature-card"><strong>Pro</strong><span>Lenses, lighting, filming, and editing workflow</span></div>
+<div class="feature-card"><strong>Fast</strong><span>Reliable delivery and polished output</span></div>
+</div>
+</section>
+<section>
+<div class="container split-2">
+<div class="section-card">
+<div class="section-head">
+<div>
+<h2>About Legacy Pigeon</h2>
+<p>Legacy Pigeon is built around quality, clarity, speed, and trust. Every image and every short film should make the bird look powerful, natural, and valuable — whether the goal is personal use, marketing, auction presentation, a website, or social media content.</p>
+</div>
+</div>
+<p>We focus on premium pigeon visuals with a polished brand feel. That means professional lenses, controlled lighting, detailed eye captures, natural body presentation, short-form video production, editing, promotional cuts, and reliable delivery. We do not just take photos — we create visual assets that help breeders, sellers, and enthusiasts present quality the right way.</p>
+<ul class="section-list">
+<li>Premium quality pigeon and eye photography</li>
+<li>Professional lenses, lighting, and razor-sharp detail</li>
+<li>Short video production, editing, and promotional visuals</li>
+<li>Fast turnaround and clean, professional delivery</li>
+</ul>
+</div>
+<div class="section-card">
+<h2>Freelance Partner for Everyone</h2>
+<p>Are you looking for a freelance partner for assignments related to pigeon and eye photography for personal use or auctions, atmospheric images, websites, promotional visuals, or edited content? Then Legacy Pigeon is the right partner to contact.</p>
+<p>We work with attention to detail, respect for presentation, and a strong focus on premium output. From single images to complete visual packages, the goal is always the same: clear quality, strong branding, and visuals that stand out.</p>
+<ul class="section-list">
+<li>Photo and video services for breeders, fanciers, and premium listings</li>
+<li>Website, auction, and social media visual support</li>
+<li>Editing, clean finishing, and advertising-ready exports</li>
+<li>Consistent brand feel across every deliverable</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<div class="container">
+<div class="section-head">
+<div>
+<h2>What We Deliver Best</h2>
+<p>We combine careful handling, visual taste, strong equipment, and efficient post-production to create premium materials for pigeon lovers, breeders, and auctions.</p>
+</div>
+</div>
+<div class="services-grid">
+<div class="service-card">
+<strong>Eye Detail Photography</strong>
+<p>Ultra-detailed eye captures using dedicated lenses and controlled light for maximum texture, contrast, and clarity.</p>
+</div>
+<div class="service-card">
+<strong>Natural Pigeon Portraits</strong>
+<p>Clean, natural-looking bird presentation with attention to posture, feathers, balance, and real presence.</p>
+</div>
+<div class="service-card">
+<strong>Short Video Production</strong>
+<p>Short professional clips of the pigeon and the eye, edited for websites, social posts, auctions, and ads.</p>
+</div>
+<div class="service-card">
+<strong>Editing &amp; Advertising Cuts</strong>
+<p>Color work, clean finishing, polished exports, branded presentation, and short promotional edits when needed.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="eye-photos">
+<div class="container">
+<div class="section-head">
+<div>
+<h2>Eye Photos</h2>
+<p>The specialty of Legacy Pigeon is the eye photos. We use professional lenses and lighting to make every eye image as detailed and razor sharp as possible. Our eye photos are built to show character, structure, and bloodline power with premium clarity.</p>
+</div>
+</div>
+<div class="section-card">
+<div class="gallery-wrap" style="margin-top: 20px;">
+<div class="gallery-grid">
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_01.webp" data-gallery="eye" data-title="Eye Photo 01" type="button">
+<img alt="Eye Photo 01" draggable="false" loading="lazy" src="assets/eyes/eye_01.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_02.webp" data-gallery="eye" data-title="Eye Photo 02" type="button">
+<img alt="Eye Photo 02" draggable="false" loading="lazy" src="assets/eyes/eye_02.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_03.webp" data-gallery="eye" data-title="Eye Photo 03" type="button">
+<img alt="Eye Photo 03" draggable="false" loading="lazy" src="assets/eyes/eye_03.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_04.webp" data-gallery="eye" data-title="Eye Photo 04" type="button">
+<img alt="Eye Photo 04" draggable="false" loading="lazy" src="assets/eyes/eye_04.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_05.webp" data-gallery="eye" data-title="Eye Photo 05" type="button">
+<img alt="Eye Photo 05" draggable="false" loading="lazy" src="assets/eyes/eye_05.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_06.webp" data-gallery="eye" data-title="Eye Photo 06" type="button">
+<img alt="Eye Photo 06" draggable="false" loading="lazy" src="assets/eyes/eye_06.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_07.webp" data-gallery="eye" data-title="Eye Photo 07" type="button">
+<img alt="Eye Photo 07" draggable="false" loading="lazy" src="assets/eyes/eye_07.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_08.webp" data-gallery="eye" data-title="Eye Photo 08" type="button">
+<img alt="Eye Photo 08" draggable="false" loading="lazy" src="assets/eyes/eye_08.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_09.webp" data-gallery="eye" data-title="Eye Photo 09" type="button">
+<img alt="Eye Photo 09" draggable="false" loading="lazy" src="assets/eyes/eye_09.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_10.webp" data-gallery="eye" data-title="Eye Photo 10" type="button">
+<img alt="Eye Photo 10" draggable="false" loading="lazy" src="assets/eyes/eye_10.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_11.webp" data-gallery="eye" data-title="Eye Photo 11" type="button">
+<img alt="Eye Photo 11" draggable="false" loading="lazy" src="assets/eyes/eye_11.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_12.webp" data-gallery="eye" data-title="Eye Photo 12" type="button">
+<img alt="Eye Photo 12" draggable="false" loading="lazy" src="assets/eyes/eye_12.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_13.webp" data-gallery="eye" data-title="Eye Photo 13" type="button">
+<img alt="Eye Photo 13" draggable="false" loading="lazy" src="assets/eyes/eye_13.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_14.webp" data-gallery="eye" data-title="Eye Photo 14" type="button">
+<img alt="Eye Photo 14" draggable="false" loading="lazy" src="assets/eyes/eye_14.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_15.webp" data-gallery="eye" data-title="Eye Photo 15" type="button">
+<img alt="Eye Photo 15" draggable="false" loading="lazy" src="assets/eyes/eye_15.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_16.webp" data-gallery="eye" data-title="Eye Photo 16" type="button">
+<img alt="Eye Photo 16" draggable="false" loading="lazy" src="assets/eyes/eye_16.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_17.webp" data-gallery="eye" data-title="Eye Photo 17" type="button">
+<img alt="Eye Photo 17" draggable="false" loading="lazy" src="assets/eyes/eye_17.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_18.webp" data-gallery="eye" data-title="Eye Photo 18" type="button">
+<img alt="Eye Photo 18" draggable="false" loading="lazy" src="assets/eyes/eye_18.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_19.webp" data-gallery="eye" data-title="Eye Photo 19" type="button">
+<img alt="Eye Photo 19" draggable="false" loading="lazy" src="assets/eyes/eye_19.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_20.webp" data-gallery="eye" data-title="Eye Photo 20" type="button">
+<img alt="Eye Photo 20" draggable="false" loading="lazy" src="assets/eyes/eye_20.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_21.webp" data-gallery="eye" data-title="Eye Photo 21" type="button">
+<img alt="Eye Photo 21" draggable="false" loading="lazy" src="assets/eyes/eye_21.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_22.webp" data-gallery="eye" data-title="Eye Photo 22" type="button">
+<img alt="Eye Photo 22" draggable="false" loading="lazy" src="assets/eyes/eye_22.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_23.webp" data-gallery="eye" data-title="Eye Photo 23" type="button">
+<img alt="Eye Photo 23" draggable="false" loading="lazy" src="assets/eyes/eye_23.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_24.webp" data-gallery="eye" data-title="Eye Photo 24" type="button">
+<img alt="Eye Photo 24" draggable="false" loading="lazy" src="assets/eyes/eye_24.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_25.webp" data-gallery="eye" data-title="Eye Photo 25" type="button">
+<img alt="Eye Photo 25" draggable="false" loading="lazy" src="assets/eyes/eye_25.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_26.webp" data-gallery="eye" data-title="Eye Photo 26" type="button">
+<img alt="Eye Photo 26" draggable="false" loading="lazy" src="assets/eyes/eye_26.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_27.webp" data-gallery="eye" data-title="Eye Photo 27" type="button">
+<img alt="Eye Photo 27" draggable="false" loading="lazy" src="assets/eyes/eye_27.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_28.webp" data-gallery="eye" data-title="Eye Photo 28" type="button">
+<img alt="Eye Photo 28" draggable="false" loading="lazy" src="assets/eyes/eye_28.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_29.webp" data-gallery="eye" data-title="Eye Photo 29" type="button">
+<img alt="Eye Photo 29" draggable="false" loading="lazy" src="assets/eyes/eye_29.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/eyes/eye_30.webp" data-gallery="eye" data-title="Eye Photo 30" type="button">
+<img alt="Eye Photo 30" draggable="false" loading="lazy" src="assets/eyes/eye_30.webp"/></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="pigeon-photos">
+<div class="container">
+<div class="section-head">
+<div>
+<h2>Pigeon Photos</h2>
+<p>We ensure that your pigeon will be photographed as naturally as possible. Legacy Pigeon invested in knowledge and top hardware so every frame looks clean, balanced, and premium. Many pigeon fanciers appreciate this more natural way of photographing, especially when it still feels elegant and high-end.</p>
+</div>
+</div>
+<div class="section-card">
+
+<div class="gallery-wrap" style="margin-top: 20px;">
+<div class="gallery-grid">
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_01.webp" data-gallery="pigeon" data-title="Pigeon Photo 01" type="button"><img alt="Pigeon Photo 01" draggable="false" loading="lazy" src="assets/pigeons/pigeon_01.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_02.webp" data-gallery="pigeon" data-title="Pigeon Photo 02" type="button"><img alt="Pigeon Photo 02" draggable="false" loading="lazy" src="assets/pigeons/pigeon_02.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_03.webp" data-gallery="pigeon" data-title="Pigeon Photo 03" type="button"><img alt="Pigeon Photo 03" draggable="false" loading="lazy" src="assets/pigeons/pigeon_03.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_04.webp" data-gallery="pigeon" data-title="Pigeon Photo 04" type="button"><img alt="Pigeon Photo 04" draggable="false" loading="lazy" src="assets/pigeons/pigeon_04.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_05.webp" data-gallery="pigeon" data-title="Pigeon Photo 05" type="button"><img alt="Pigeon Photo 05" draggable="false" loading="lazy" src="assets/pigeons/pigeon_05.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_06.webp" data-gallery="pigeon" data-title="Pigeon Photo 06" type="button"><img alt="Pigeon Photo 06" draggable="false" loading="lazy" src="assets/pigeons/pigeon_06.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_07.webp" data-gallery="pigeon" data-title="Pigeon Photo 07" type="button"><img alt="Pigeon Photo 07" draggable="false" loading="lazy" src="assets/pigeons/pigeon_07.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_08.webp" data-gallery="pigeon" data-title="Pigeon Photo 08" type="button"><img alt="Pigeon Photo 08" draggable="false" loading="lazy" src="assets/pigeons/pigeon_08.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_09.webp" data-gallery="pigeon" data-title="Pigeon Photo 09" type="button"><img alt="Pigeon Photo 09" draggable="false" loading="lazy" src="assets/pigeons/pigeon_09.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_10.webp" data-gallery="pigeon" data-title="Pigeon Photo 10" type="button"><img alt="Pigeon Photo 10" draggable="false" loading="lazy" src="assets/pigeons/pigeon_10.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_11.webp" data-gallery="pigeon" data-title="Pigeon Photo 11" type="button"><img alt="Pigeon Photo 11" draggable="false" loading="lazy" src="assets/pigeons/pigeon_11.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_12.webp" data-gallery="pigeon" data-title="Pigeon Photo 12" type="button"><img alt="Pigeon Photo 12" draggable="false" loading="lazy" src="assets/pigeons/pigeon_12.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_13.webp" data-gallery="pigeon" data-title="Pigeon Photo 13" type="button"><img alt="Pigeon Photo 13" draggable="false" loading="lazy" src="assets/pigeons/pigeon_13.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_14.webp" data-gallery="pigeon" data-title="Pigeon Photo 14" type="button"><img alt="Pigeon Photo 14" draggable="false" loading="lazy" src="assets/pigeons/pigeon_14.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_15.webp" data-gallery="pigeon" data-title="Pigeon Photo 15" type="button"><img alt="Pigeon Photo 15" draggable="false" loading="lazy" src="assets/pigeons/pigeon_15.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_16.webp" data-gallery="pigeon" data-title="Pigeon Photo 16" type="button"><img alt="Pigeon Photo 16" draggable="false" loading="lazy" src="assets/pigeons/pigeon_16.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_17.webp" data-gallery="pigeon" data-title="Pigeon Photo 17" type="button"><img alt="Pigeon Photo 17" draggable="false" loading="lazy" src="assets/pigeons/pigeon_17.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_18.webp" data-gallery="pigeon" data-title="Pigeon Photo 18" type="button"><img alt="Pigeon Photo 18" draggable="false" loading="lazy" src="assets/pigeons/pigeon_18.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_19.webp" data-gallery="pigeon" data-title="Pigeon Photo 19" type="button"><img alt="Pigeon Photo 19" draggable="false" loading="lazy" src="assets/pigeons/pigeon_19.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_20.webp" data-gallery="pigeon" data-title="Pigeon Photo 20" type="button"><img alt="Pigeon Photo 20" draggable="false" loading="lazy" src="assets/pigeons/pigeon_20.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_21.webp" data-gallery="pigeon" data-title="Pigeon Photo 21" type="button"><img alt="Pigeon Photo 21" draggable="false" loading="lazy" src="assets/pigeons/pigeon_21.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_22.webp" data-gallery="pigeon" data-title="Pigeon Photo 22" type="button"><img alt="Pigeon Photo 22" draggable="false" loading="lazy" src="assets/pigeons/pigeon_22.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_23.webp" data-gallery="pigeon" data-title="Pigeon Photo 23" type="button"><img alt="Pigeon Photo 23" draggable="false" loading="lazy" src="assets/pigeons/pigeon_23.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_24.webp" data-gallery="pigeon" data-title="Pigeon Photo 24" type="button"><img alt="Pigeon Photo 24" draggable="false" loading="lazy" src="assets/pigeons/pigeon_24.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_25.webp" data-gallery="pigeon" data-title="Pigeon Photo 25" type="button"><img alt="Pigeon Photo 25" draggable="false" loading="lazy" src="assets/pigeons/pigeon_25.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_26.webp" data-gallery="pigeon" data-title="Pigeon Photo 26" type="button"><img alt="Pigeon Photo 26" draggable="false" loading="lazy" src="assets/pigeons/pigeon_26.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_27.webp" data-gallery="pigeon" data-title="Pigeon Photo 27" type="button"><img alt="Pigeon Photo 27" draggable="false" loading="lazy" src="assets/pigeons/pigeon_27.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_28.webp" data-gallery="pigeon" data-title="Pigeon Photo 28" type="button"><img alt="Pigeon Photo 28" draggable="false" loading="lazy" src="assets/pigeons/pigeon_28.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_29.webp" data-gallery="pigeon" data-title="Pigeon Photo 29" type="button"><img alt="Pigeon Photo 29" draggable="false" loading="lazy" src="assets/pigeons/pigeon_29.webp"/></button>
+<button class="placeholder-card gallery-item has-image" data-full="assets/pigeons/pigeon_30.webp" data-gallery="pigeon" data-title="Pigeon Photo 30" type="button"><img alt="Pigeon Photo 30" draggable="false" loading="lazy" src="assets/pigeons/pigeon_30.webp"/></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="video">
+<div class="container video-showcase">
+<div class="video-box">
+<video autoplay="" controls="" controlsList="nodownload noplaybackrate" disablePictureInPicture="" disableRemotePlayback="" draggable="false" loop="" muted="" playsinline="" preload="metadata">
+<source src="assets/video.mp4" type="video/mp4"/>
+            Your browser does not support the video tag.
+          </video>
+</div>
+<div class="video-copy">
+<h2>Video, Editing &amp; Promotion</h2>
+<p>Legacy Pigeon does more than still photography. We also create short cinematic video clips, polished edits, promotional cuts, and branded outputs that feel premium from the first second. This helps your birds stand out not only in photos, but also in motion.</p>
+<ul>
+<li>Short professional pigeon and eye video clips</li>
+<li>Clean editing and polished export for delivery</li>
+<li>Useful for websites, social media, auctions, and advertisements</li>
+<li>Visual consistency with the Legacy Pigeon brand identity</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="packages">
+<div class="container">
+<div class="section-head">
+<div>
+<h2>Packages</h2>
+<p>Three simple, premium options with clear outputs. Prices do not include VAT.</p>
+</div>
+</div>
+<div class="packages">
+<article class="package-card">
+<h3>Pigeon Photo</h3>
+<div class="package-price">$15</div>
+<div class="vat-note">Prices do not include VAT</div>
+<p>A clean professional photo of the pigeon only.</p>
+<ul class="package-list">
+<li>1 professional pigeon photo</li>
+<li>Natural presentation and clean finishing</li>
+<li>Ready for personal use, website, or auction listing</li>
+</ul>
+</article>
+<article class="package-card">
+<span class="badge">Most Requested</span>
+<h3>Pigeon + Eye Photo</h3>
+<div class="package-price">$18</div>
+<div class="vat-note">Prices do not include VAT</div>
+<p>The pigeon photo plus a professional eye photo.</p>
+<ul class="package-list">
+<li>1 professional pigeon photo</li>
+<li>1 detailed eye image</li>
+<li>Ideal for richer presentation and stronger value</li>
+</ul>
+</article>
+<article class="package-card">
+<h3>Pigeon + Eye + Short Video</h3>
+<div class="package-price">$23</div>
+<div class="vat-note">Prices do not include VAT</div>
+<p>The full premium set: pigeon photo, eye photo, and a short professional video.</p>
+<ul class="package-list">
+<li>1 professional pigeon photo</li>
+<li>1 detailed eye photo</li>
+<li>1 short video of the pigeon and the eye</li>
+</ul>
+</article>
+</div>
+<div class="packages-cta">
+<p>To request the best available price, please contact us and we will be happy to prepare the right offer for your needs.</p>
+<a class="btn btn-dark" href="#contact">Contact Us</a>
+</div>
+</div>
+</section>
+<section>
+<div class="container split-2">
+<div class="section-card">
+<h2>Why Clients Choose Us</h2>
+<p>Clients come to Legacy Pigeon for more than photos. They choose us because the final result feels premium, organized, and dependable. We care about detail, we work with proper equipment, and we understand how much visual presentation matters when quality birds are involved.</p>
+<ul class="section-list">
+<li>Sharp, premium images with clean detail</li>
+<li>Professional hardware, lenses, and lighting</li>
+<li>Fast and reliable turnaround</li>
+<li>Photo, video, editing, and advertising-ready outputs</li>
+<li>Consistent quality across individual and branded work</li>
+</ul>
+</div>
+<div class="section-card">
+<h2>Built for Websites, Auctions &amp; Social Media</h2>
+<p>Whether you need visuals for a personal archive, a breeder profile, an auction page, a premium website, a promotional campaign, or branded social content, the site structure is now ready. Your future galleries, client logos, examples, and package previews can all be updated quickly without changing the overall design.</p>
+<ul class="section-list">
+<li>Website-ready showcase layout</li>
+<li>Auction-friendly visual presentation</li>
+<li>Atmospheric and promotional storytelling</li>
+<li>Brand-consistent design from top to bottom</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="partners">
+<div class="container">
+<div class="section-head">
+<div>
+<h2>Our Partners</h2>
+<p>Trusted by leading pigeon auctions, racing platforms, and partner brands.</p>
+</div>
+</div>
+<div class="partner-strip">
+<div class="partner-track"><div class="partner-item"><img alt="PIPA Pigeon Paradise partner logo" draggable="false" src="assets/partners/pipa_pigeon_paradise.png"/></div><div class="partner-item"><img alt="Derby Aal Nagib partner logo" draggable="false" src="assets/partners/derby_aal_nagib.png"/></div><div class="partner-item"><img alt="Elmogy International OLR partner logo" draggable="false" src="assets/partners/elmogy_international_olr.png"/></div><div class="partner-item"><img alt="Pyramids One Loft Race partner logo" draggable="false" src="assets/partners/pyramids_one_loft_race.png"/></div><div class="partner-item"><img alt="A&amp;W Pigeon Auctions partner logo" draggable="false" src="assets/partners/a_w_pigeon_auctions.png"/></div><div class="partner-item"><img alt="PIPA Pigeon Paradise partner logo" draggable="false" src="assets/partners/pipa_pigeon_paradise.png"/></div><div class="partner-item"><img alt="Derby Aal Nagib partner logo" draggable="false" src="assets/partners/derby_aal_nagib.png"/></div><div class="partner-item"><img alt="Elmogy International OLR partner logo" draggable="false" src="assets/partners/elmogy_international_olr.png"/></div><div class="partner-item"><img alt="Pyramids One Loft Race partner logo" draggable="false" src="assets/partners/pyramids_one_loft_race.png"/></div><div class="partner-item"><img alt="A&amp;W Pigeon Auctions partner logo" draggable="false" src="assets/partners/a_w_pigeon_auctions.png"/></div></div>
+</div>
+</div>
+</section>
+<section id="contact">
+<div class="container contact-grid">
+<div class="contact-card">
+<h2>Contact Legacy Pigeon</h2>
+<p>If you are looking for a photography and videography freelance partner for pigeon visuals, eye photos, short films, promotional edits, or branded delivery, we are ready to help.</p>
+<div class="contact-list">
+<a class="contact-item contact-link whatsapp" href="https://wa.me/201124481109" rel="noreferrer" target="_blank">
+<div>
+<strong>WhatsApp</strong>
+<span>+20 112 448 1109</span>
+</div>
+<span class="contact-link-label">Chat on WhatsApp</span>
+</a>
+<a class="contact-item contact-link" href="mailto:info@legacypigeon.com">
+<div>
+<strong>Email</strong>
+<span>info@legacypigeon.com</span>
+</div>
+<span class="contact-link-label">Send Email</span>
+</a>
+<a class="contact-item contact-link" href="https://facebook.com/LegacyPigeon" rel="noreferrer" target="_blank">
+<div>
+<strong>Facebook</strong>
+<span>facebook.com/LegacyPigeon</span>
+</div>
+<span class="contact-link-label">Open Facebook</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<div aria-hidden="true" class="lightbox" id="lightbox">
+<div class="lightbox-backdrop" data-close-lightbox=""></div>
+<div class="lightbox-content">
+<button aria-label="Previous image" class="lightbox-arrow prev" type="button">❮</button>
+<div class="lightbox-stage">
+<button aria-label="Close" class="lightbox-close" type="button">✕</button>
+<img alt="Expanded gallery image" draggable="false" id="lightboxImage" style="display:none;"/>
+<div class="lightbox-placeholder" id="lightboxPlaceholder">
+<strong>Image Preview</strong>
+<span>Your final uploaded image will open here in full size. Left and right arrows will let visitors move through the whole gallery.</span>
+</div>
+<div class="lightbox-caption">
+<strong id="lightboxTitle">Gallery Image</strong>
+<span id="lightboxCounter">1 / 1</span>
+</div>
+</div>
+<button aria-label="Next image" class="lightbox-arrow next" type="button">❯</button>
+</div>
+</div>
+<footer>
+<div class="container footer-box">
+<div class="footer-grid">
+<div>
+<div class="footer-brand">
+<img alt="Legacy Pigeon logo" draggable="false" src="assets/logo_legacy.png"/>
+</div>
+<p class="footer-note">Legacy Pigeon – Ideal for capturing champion bloodlines. Legacy Pigeon – Where champions, legends, and bloodline power meet.</p>
+</div>
+<div>
+<h4>Quick Links</h4>
+<ul>
+<li><a href="#eye-photos">Eye Photos</a></li>
+<li><a href="#pigeon-photos">Pigeon Photos</a></li>
+<li><a href="#video">Short Video</a></li>
+<li><a href="#packages">Packages</a></li>
+</ul>
+</div>
+<div>
+<h4>Contact</h4>
+<ul>
+<li><a href="tel:+201124481109">+20 112 448 1109</a></li>
+<li><a href="mailto:info@legacypigeon.com">info@legacypigeon.com</a></li>
+<li><a href="https://facebook.com/LegacyPigeon" rel="noreferrer" target="_blank">facebook.com/LegacyPigeon</a></li>
+</ul>
+</div>
+</div>
+<div class="copyright">© 2026 LEGACY PIGEON. All rights reserved.</div>
+</div>
+</footer>
+
+<script>
+(function() {
+  const translations = {"en": {"pageTitle": "LEGACY PIGEON | Photography & Films", "pageDesc": "Legacy Pigeon Photography & Films — premium pigeon, eye, and short-form video production for champions, legends, and bloodline power.", "navHome": "Home", "navEye": "Eye Photos", "navPigeon": "Pigeon Photos", "navVideo": "Short Video", "navPackages": "Packages", "navPartners": "Partners", "navContact": "Contact", "taglineDark": "Legacy Pigeon", "taglineLight": "Photography & Films", "heroP1": "For nearly <strong>8 years</strong>, Legacy Pigeon has been part of the visual language of race-pigeon culture — from the Middle East to serious fanciers across the world. We are proud to be among the early specialists dedicated to premium pigeon and eye photography, with a recognizable creative fingerprint built on detail, elegance, and consistency.", "heroP2": "Across this journey, we have photographed <strong>close to 20,000 birds</strong> and worked with clients from <strong>Egypt, Kuwait, Saudi Arabia, the UAE, Qatar, the United Kingdom, Denmark, Belgium, Germany</strong>, and many more. We have also collaborated with respected names such as <strong>PIPA</strong>, <strong>A&amp;W Pigeon Auctions</strong>, <strong>Pyramids One Loft Race</strong>, <strong>Elmogy One Loft Race</strong>, and <strong>Derby Aal Nagib</strong> — delivering imagery that gives every bird a stronger presence, a premium identity, and a story worth remembering.", "heroS1": "8+ years of proven field experience", "heroS2": "Nearly 20,000 birds photographed", "heroS3": "Trusted across the Middle East & Europe", "heroS4": "Premium visuals for auctions, lofts, and champions", "heroBtnPackages": "View Packages", "heroBtnContact": "Contact Us", "heroBoxTitle": "Built for serious fanciers, elite lofts, and premium auctions.", "heroBoxP1": "From razor-sharp eye photography to elegant full-body portraits, we create images that elevate pedigree, beauty, structure, and presentation.", "heroBoxP2": "Every project is produced with professional lenses, controlled lighting, careful retouching, and a polished delivery standard designed to make each bird stand out at first glance.", "promoKicker": "Stand Out with Legacy Pigeon", "promoTitle": "If you want your birds to <strong>stand out, look exceptional, and leave a lasting impression</strong>, Legacy Pigeon is the ideal visual solution.", "promoCopy": "We present each bird with premium clarity, refined finishing, and a luxury visual style designed for serious fanciers, lofts, websites, and auctions. Your birds deserve more than simple photos — they deserve imagery that gives them real presence.", "promoB1": "Premium Presence", "promoB2": "Luxury Finishing", "promoB3": "Auction-Ready Visuals", "stat1Label": "Premium package options", "stat2Value": "Pro", "stat2Label": "Lenses, lighting, filming, and editing workflow", "stat3Value": "Fast", "stat3Label": "Reliable delivery and polished output", "aboutTitle": "About Legacy Pigeon", "aboutP1": "Legacy Pigeon is built around quality, clarity, speed, and trust. Every image and every short film should make the bird look powerful, natural, and valuable — whether the goal is personal use, marketing, auction presentation, a website, or social media content.", "aboutP2": "We focus on premium pigeon visuals with a polished brand feel. That means professional lenses, controlled lighting, detailed eye captures, natural body presentation, short-form video production, editing, promotional cuts, and reliable delivery. We do not just take photos — we create visual assets that help breeders, sellers, and enthusiasts present quality the right way.", "aboutL1": "Premium quality pigeon and eye photography", "aboutL2": "Professional lenses, lighting, and razor-sharp detail", "aboutL3": "Short video production, editing, and promotional visuals", "aboutL4": "Fast turnaround and clean, professional delivery", "partnerTitle": "Freelance Partner for Everyone", "partnerP1": "Are you looking for a freelance partner for assignments related to pigeon and eye photography for personal use or auctions, atmospheric images, websites, promotional visuals, or edited content? Then Legacy Pigeon is the right partner to contact.", "partnerP2": "We work with attention to detail, respect for presentation, and a strong focus on premium output. From single images to complete visual packages, the goal is always the same: clear quality, strong branding, and visuals that stand out.", "partnerL1": "Photo and video services for breeders, fanciers, and premium listings", "partnerL2": "Website, auction, and social media visual support", "partnerL3": "Editing, clean finishing, and advertising-ready exports", "partnerL4": "Consistent brand feel across every deliverable", "bestTitle": "What We Deliver Best", "bestP": "We combine careful handling, visual taste, strong equipment, and efficient post-production to create premium materials for pigeon lovers, breeders, and auctions.", "svc1T": "Eye Detail Photography", "svc1P": "Ultra-detailed eye captures using dedicated lenses and controlled light for maximum texture, contrast, and clarity.", "svc2T": "Natural Pigeon Portraits", "svc2P": "Clean, natural-looking bird presentation with attention to posture, feathers, balance, and real presence.", "svc3T": "Short Video Production", "svc3P": "Short professional clips of the pigeon and the eye, edited for websites, social posts, auctions, and ads.", "svc4T": "Editing & Advertising Cuts", "svc4P": "Color work, clean finishing, polished exports, branded presentation, and short promotional edits when needed.", "eyeTitle": "Eye Photos", "eyeP": "The specialty of Legacy Pigeon is the eye photos. We use professional lenses and lighting to make every eye image as detailed and razor sharp as possible. Our eye photos are built to show character, structure, and bloodline power with premium clarity.", "pigeonTitle": "Pigeon Photos", "pigeonP": "Our pigeon photography is designed to present each bird in a premium, balanced, and natural way. The goal is to highlight feather quality, posture, body shape, and overall elegance with a result that feels refined and professional.", "videoTitle": "Video, Editing & Promotion", "videoP": "Legacy Pigeon does more than still photography. We also create short cinematic video clips, polished edits, promotional cuts, and branded outputs that feel premium from the first second. This helps your birds stand out not only in photos, but also in motion.", "videoL1": "Short professional pigeon and eye video clips", "videoL2": "Clean editing and polished export for delivery", "videoL3": "Useful for websites, social media, auctions, and advertisements", "videoL4": "Visual consistency with the Legacy Pigeon brand identity", "packagesTitle": "Packages", "packagesP": "Three simple, premium options with clear outputs. Prices do not include VAT.", "pkg1T": "Pigeon Photo", "pkg1P": "A clean professional photo of the pigeon only.", "vatNote": "Prices do not include VAT", "pkg1L1": "1 professional pigeon photo", "pkg1L2": "Natural presentation and clean finishing", "pkg1L3": "Ready for personal use, website, or auction listing", "badgeMost": "Most Requested", "pkg2T": "Pigeon + Eye Photo", "pkg2P": "The pigeon photo plus a professional eye photo.", "pkg2L1": "1 professional pigeon photo", "pkg2L2": "1 detailed eye image", "pkg2L3": "Ideal for richer presentation and stronger value", "pkg3T": "Pigeon + Eye + Short Video", "pkg3P": "The full premium set: pigeon photo, eye photo, and a short professional video.", "pkg3L1": "1 professional pigeon photo", "pkg3L2": "1 detailed eye photo", "pkg3L3": "1 short video of the pigeon and the eye", "packagesCtaP": "To request the best available price, please contact us and we will be happy to prepare the right offer for your needs.", "packagesCtaBtn": "Contact Us", "chooseTitle": "Why Clients Choose Us", "chooseP": "Clients come to Legacy Pigeon for more than photos. They choose us because the final result feels premium, organized, and dependable. We care about detail, we work with proper equipment, and we understand how much visual presentation matters when quality birds are involved.", "chooseL1": "Sharp, premium images with clean detail", "chooseL2": "Professional hardware, lenses, and lighting", "chooseL3": "Fast and reliable turnaround", "chooseL4": "Photo, video, editing, and advertising-ready outputs", "chooseL5": "Consistent quality across individual and branded work", "webTitle": "Built for Websites, Auctions & Social Media", "webP": "Whether you need visuals for a personal archive, a breeder profile, an auction page, a premium website, a promotional campaign, or branded social content, the site structure is now ready. Your future galleries, client logos, examples, and package previews can all be updated quickly without changing the overall design.", "webL1": "Website-ready showcase layout", "webL2": "Auction-friendly visual presentation", "webL3": "Atmospheric and promotional storytelling", "webL4": "Brand-consistent design from top to bottom", "partnersTitle": "Our Partners", "partnersP": "Trusted by leading pigeon auctions, racing platforms, and partner brands.", "contactTitle": "Contact Legacy Pigeon", "contactP": "If you are looking for a photography and videography freelance partner for pigeon visuals, eye photos, short films, promotional edits, or branded delivery, we are ready to help.", "contactWhatsapp": "WhatsApp", "contactWhatsappBtn": "Chat on WhatsApp", "contactEmail": "Email", "contactEmailBtn": "Send Email", "contactFacebook": "Facebook", "contactFacebookBtn": "Open Facebook", "lightboxPreviewTitle": "Image Preview", "lightboxPreviewText": "Your final uploaded image will open here in full size. Left and right arrows will let visitors move through the whole gallery.", "footerNote": "Legacy Pigeon – Ideal for capturing champion bloodlines. Legacy Pigeon – Where champions, legends, and bloodline power meet.", "footerQuick": "Quick Links", "footerContact": "Contact", "footerHomeEye": "Eye Photos", "footerHomePigeon": "Pigeon Photos", "footerHomeVideo": "Short Video", "footerHomePackages": "Packages", "copyright": "© 2026 LEGACY PIGEON. All rights reserved.", "videoFallback": "Your browser does not support the video tag."}, "ar": {"pageTitle": "Legacy Pigeon | فوتوغرافي وفيلمز", "pageDesc": "ليجسي بيجون فوتوغرافي وفيلمز — تصوير حمام السباق وصور العيون والفيديوهات القصيرة بأسلوب بصري فاخر يليق بالأبطال والسلالات القوية.", "navHome": "الرئيسية", "navEye": "صور العيون", "navPigeon": "صور الحمام", "navVideo": "فيديو قصير", "navPackages": "الباقات", "navPartners": "الشركاء", "navContact": "تواصل", "taglineDark": "Legacy Pigeon", "taglineLight": "Photography & Films", "heroP1": "منذ ما يقرب من <strong>8 سنوات</strong>، أصبحت <span class=\"brand-inline\">Legacy Pigeon</span> جزءًا من الهوية البصرية لعالم حمام السباق — من الشرق الأوسط إلى هواة ومحترفي الحمام حول العالم. نفخر بأننا من أوائل المتخصصين في تصوير الحمام وصور العيون بجودة فائقة وبصمة إبداعية واضحة تقوم على الدقة والأناقة والثبات في المستوى.", "heroP2": "وخلال هذه الرحلة قمنا بتصوير <strong>ما يقارب 20,000 طائر</strong>، وتعاملنا مع عملاء من <strong>مصر والكويت والسعودية والإمارات وقطر والمملكة المتحدة والدنمارك وبلجيكا وألمانيا</strong> وغيرها. كما تعاونّا مع أسماء بارزة مثل <strong>PIPA</strong> و<strong>A&amp;W Pigeon Auctions</strong> و<strong>Pyramids One Loft Race</strong> و<strong>Elmogy One Loft Race</strong> و<strong>Derby Aal Nagib</strong> — لنقدّم صورًا تمنح كل طائر حضورًا أقوى وهويةً أرقى وقصةً تستحق أن تُروى.", "heroS1": "أكثر من 8 سنوات من الخبرة الميدانية", "heroS2": "تصوير ما يقارب 20,000 طائر", "heroS3": "موثوق بنا في الشرق الأوسط وأوروبا", "heroS4": "صور فاخرة للمزادات واللافتات والأبطال", "heroBtnPackages": "عرض الباقات", "heroBtnContact": "تواصل معنا", "heroBoxTitle": "مُصمَّم لهواة النخبة واللوفتات الاحترافية والمزادات المميزة.", "heroBoxP1": "من صور العيون فائقة الدقة إلى البورتريهات الكاملة الأنيقة، نصنع صورًا ترفع من قيمة النسب والجمال والبنية وطريقة العرض.", "heroBoxP2": "كل مشروع يُنفّذ بعدسات احترافية وإضاءة مدروسة ومعالجة دقيقة وتسليم نهائي مصقول، ليجعل كل طائر يلفت الانتباه من النظرة الأولى.", "promoKicker": "تميّز مع <span class=\"brand-inline\">Legacy Pigeon</span>", "promoTitle": "إذا كنت تريد لطيورك أن <strong>تبرز، وتبدو استثنائية، وتترك انطباعًا لا يُنسى</strong>، فإن <span class=\"brand-inline\">Legacy Pigeon</span> هي الحل البصري المثالي.", "promoCopy": "نقدّم كل طائر بوضوح فاخر ولمسة نهائية راقية وأسلوب بصري مخصص لهواة النخبة واللوفتات والمواقع والمزادات. طيورك تستحق أكثر من صور عادية — إنها تستحق صورًا تمنحها حضورًا حقيقيًا.", "promoB1": "حضور بصري فاخر", "promoB2": "تشطيب راقٍ", "promoB3": "جاهز للمزاد", "stat1Label": "خيارات باقات مميزة", "stat2Value": "احترافي", "stat2Label": "عدسات وإضاءة وتصوير ومونتاج باحتراف", "stat3Value": "سريع", "stat3Label": "تسليم موثوق ومخرجات مصقولة", "aboutTitle": "عن <span class=\"brand-inline\">Legacy Pigeon</span>", "aboutP1": "تقوم <span class=\"brand-inline\">Legacy Pigeon</span> على الجودة والوضوح والسرعة والثقة. يجب أن تجعل كل صورة وكل فيديو قصير الطائر يبدو قويًا وطبيعيًا وذا قيمة — سواء كان الهدف استخدامًا شخصيًا أو تسويقًا أو عرضًا في مزاد أو موقعًا إلكترونيًا أو محتوى للسوشيال ميديا.", "aboutP2": "نركّز على الصور الفاخرة للحمام بإحساس بصري مصقول. وهذا يعني عدسات احترافية وإضاءة مضبوطة وصور عيون دقيقة وعرضًا طبيعيًا للجسم وفيديوهات قصيرة ومونتاجًا وتعديلات ترويجية وتسليمًا موثوقًا. نحن لا نلتقط صورًا فقط — بل نصنع أصولًا بصرية تساعد المربين والبائعين والهواة على عرض الجودة بالشكل الصحيح.", "aboutL1": "تصوير فاخر للحمام وصور العيون", "aboutL2": "عدسات وإضاءة احترافية وتفاصيل حادة جدًا", "aboutL3": "إنتاج فيديو قصير ومونتاج ومواد ترويجية", "aboutL4": "سرعة في التنفيذ وتسليم نظيف واحترافي", "partnerTitle": "شريك حر للجميع", "partnerP1": "إذا كنت تبحث عن شريك حر لمهام تصوير الحمام وصور العيون للاستخدام الشخصي أو المزادات أو الصور الجوية للمواقع أو المواد الترويجية أو المحتوى المعدّل، فإن <span class=\"brand-inline\">Legacy Pigeon</span> هي الجهة المناسبة للتواصل معها.", "partnerP2": "نعمل باهتمام كبير بالتفاصيل واحترام لطريقة العرض وتركيز واضح على المخرجات الفاخرة. من الصورة الواحدة إلى الباقات الكاملة، يبقى الهدف واحدًا: جودة واضحة، وهوية قوية، وصور تبرز فورًا.", "partnerL1": "خدمات تصوير وفيديو للمربين والهواة والعروض المميزة", "partnerL2": "دعم بصري للمواقع والمزادات والسوشيال ميديا", "partnerL3": "مونتاج وتشطيب نظيف وملفات جاهزة للإعلانات", "partnerL4": "إحساس بصري موحّد في كل مخرجاتنا", "bestTitle": "أهم ما نقدّمه بإتقان", "bestP": "نجمع بين التعامل الدقيق والذوق البصري والمعدات القوية والمعالجة السريعة لنصنع موادًا فاخرة لهواة الحمام والمربين والمزادات.", "svc1T": "تصوير تفاصيل العين", "svc1P": "صور عيون فائقة التفاصيل بعدسات مخصصة وإضاءة مضبوطة لإظهار أقصى درجات الملمس والتباين والوضوح.", "svc2T": "بورتريهات حمام طبيعية", "svc2P": "عرض نظيف وطبيعي للطائر مع اهتمام بالوقفة والريش والتوازن والحضور الحقيقي.", "svc3T": "إنتاج فيديو قصير", "svc3P": "لقطات قصيرة احترافية للحمامة والعين، مناسبة للمواقع والمنشورات والمزادات والإعلانات.", "svc4T": "مونتاج وقصات إعلانية", "svc4P": "تصحيح ألوان وتشطيب نظيف ومخرجات مصقولة وعرض براند وقصات ترويجية قصيرة عند الحاجة.", "eyeTitle": "صور العيون", "eyeP": "تُعد صور العيون من أبرز تخصصات <span class=\"brand-inline\">Legacy Pigeon</span>. نستخدم عدسات وإضاءة احترافية لجعل كل صورة عين مليئة بالتفاصيل وحدّة استثنائية. صورنا للعيون صُمّمت لإظهار الشخصية والبنية وقوة السلالة بوضوح فاخر.", "pigeonTitle": "صور الحمام", "pigeonP": "صُمّم تصوير الحمام لدينا داخل <span class=\"brand-inline\">Legacy Pigeon</span> لتقديم كل طائر بطريقة فاخرة ومتوازنة وطبيعية. الهدف هو إبراز جودة الريش والوقفة وشكل الجسم والأناقة العامة بنتيجة راقية واحترافية.", "videoTitle": "فيديو ومونتاج وترويج", "videoP": "<span class=\"brand-inline\">Legacy Pigeon</span> لا تقتصر على التصوير الثابت فقط. نحن نصنع أيضًا فيديوهات قصيرة سينمائية ومونتاجًا مصقولًا ومواد ترويجية ومخرجات براند تشعرك بالفخامة منذ اللحظة الأولى. وهذا يساعد طيورك على أن تبرز ليس في الصور فقط، بل في الحركة أيضًا.", "videoL1": "فيديوهات قصيرة احترافية للحمام والعين", "videoL2": "مونتاج نظيف وتصدير مصقول للتسليم", "videoL3": "مفيد للمواقع والسوشيال ميديا والمزادات والإعلانات", "videoL4": "اتساق بصري مع هوية <span class=\"brand-inline\">Legacy Pigeon</span>", "packagesTitle": "الباقات", "packagesP": "ثلاث باقات مميزة وواضحة المخرجات. الأسعار لا تشمل ضريبة القيمة المضافة.", "pkg1T": "صورة حمامة", "pkg1P": "صورة احترافية نظيفة للحمامة فقط.", "vatNote": "الأسعار لا تشمل ضريبة القيمة المضافة", "pkg1L1": "صورة احترافية واحدة للحمامة", "pkg1L2": "عرض طبيعي وتشطيب نظيف", "pkg1L3": "جاهزة للاستخدام الشخصي أو الموقع أو المزاد", "badgeMost": "الأكثر طلبًا", "pkg2T": "صورة حمامة + صورة عين", "pkg2P": "صورة الحمامة مع صورة عين احترافية.", "pkg2L1": "صورة احترافية واحدة للحمامة", "pkg2L2": "صورة عين تفصيلية واحدة", "pkg2L3": "مثالية لعرض أقوى وقيمة أعلى", "pkg3T": "حمامة + عين + فيديو قصير", "pkg3P": "الباقة الكاملة: صورة حمامة وصورة عين وفيديو قصير احترافي.", "pkg3L1": "صورة احترافية واحدة للحمامة", "pkg3L2": "صورة عين تفصيلية واحدة", "pkg3L3": "فيديو قصير واحد للحمامة والعين", "packagesCtaP": "للحصول على أفضل سعر متاح، يرجى التواصل معنا وسنكون سعداء بتجهيز العرض المناسب لاحتياجك.", "packagesCtaBtn": "تواصل معنا", "chooseTitle": "لماذا يختارنا العملاء", "chooseP": "يأتي العملاء إلى <span class=\"brand-inline\">Legacy Pigeon</span> لأكثر من مجرد الصور. هم يختاروننا لأن النتيجة النهائية تبدو فاخرة ومنظمة وموثوقة. نحن نهتم بالتفاصيل، ونعمل بمعدات مناسبة، وندرك جيدًا مدى أهمية العرض البصري عندما يتعلق الأمر بالطيور المميزة.", "chooseL1": "صور حادة وفاخرة بتفاصيل نظيفة", "chooseL2": "معدات وعدسات وإضاءة احترافية", "chooseL3": "سرعة وموثوقية في التسليم", "chooseL4": "صور وفيديو ومونتاج ومخرجات جاهزة للإعلانات", "chooseL5": "جودة ثابتة في الأعمال الفردية والبراندد", "webTitle": "مصمم للمواقع والمزادات والسوشيال ميديا", "webP": "سواء كنت تحتاج هذه المواد لأرشيف شخصي أو بروفايل مربي أو صفحة مزاد أو موقع فاخر أو حملة ترويجية أو محتوى براند على السوشيال ميديا، فإن بنية الموقع جاهزة الآن. ويمكن تحديث المعارض والشعارات والأمثلة والباقات بسرعة دون تغيير التصميم العام.", "webL1": "عرض جاهز للمواقع", "webL2": "تقديم بصري مناسب للمزادات", "webL3": "سرد بصري ترويجي وجوي", "webL4": "تصميم متناسق من أول الموقع لآخره", "partnersTitle": "شركاؤنا", "partnersP": "موثوق بنا لدى أبرز مزادات الحمام ومنصات السباق والعلامات الشريكة.", "contactTitle": "تواصل مع <span class=\"brand-inline\">Legacy Pigeon</span>", "contactP": "إذا كنت تبحث عن شريك حر في التصوير الفوتوغرافي والفيديو لصور الحمام وصور العيون والفيديوهات القصيرة والتعديلات الترويجية أو التسليم البراندد، فإن <span class=\"brand-inline\">Legacy Pigeon</span> جاهزة لخدمتك.", "contactWhatsapp": "واتساب", "contactWhatsappBtn": "تواصل عبر واتساب", "contactEmail": "البريد الإلكتروني", "contactEmailBtn": "أرسل بريدًا", "contactFacebook": "فيسبوك", "contactFacebookBtn": "افتح فيسبوك", "lightboxPreviewTitle": "معاينة الصورة", "lightboxPreviewText": "ستظهر الصورة المرفوعة هنا بالحجم الكامل، ويمكن للزائر التنقل بين الصور باستخدام الأسهم يمينًا ويسارًا.", "footerNote": "<span class=\"brand-inline\">Legacy Pigeon</span> — الخيار المثالي لإبراز سلالات الأبطال.<br><span class=\"keep-together\">مع <span class=\"brand-inline\">Legacy Pigeon</span></span> يلتقي الأبطال والأساطير وقوة الدم في صورة واحدة.", "footerQuick": "روابط سريعة", "footerContact": "التواصل", "footerHomeEye": "صور العيون", "footerHomePigeon": "صور الحمام", "footerHomeVideo": "فيديو قصير", "footerHomePackages": "الباقات", "copyright": "© 2026 LEGACY PIGEON. جميع الحقوق محفوظة.", "videoFallback": "متصفحك لا يدعم تشغيل الفيديو."}};
+  const selectorMap = [{"selector": "nav.menu a[href=\"#home\"]", "key": "navHome"}, {"selector": "nav.menu a[href=\"#eye-photos\"]", "key": "navEye"}, {"selector": "nav.menu a[href=\"#pigeon-photos\"]", "key": "navPigeon"}, {"selector": "nav.menu a[href=\"#video\"]", "key": "navVideo"}, {"selector": "nav.menu a[href=\"#packages\"]", "key": "navPackages"}, {"selector": "nav.menu a[href=\"#partners\"]", "key": "navPartners"}, {"selector": "nav.menu a[href=\"#contact\"]", "key": "navContact"}, {"selector": ".tagline .dark", "key": "taglineDark"}, {"selector": ".tagline .light", "key": "taglineLight"}, {"selector": ".subline p:nth-of-type(1)", "key": "heroP1", "html": true}, {"selector": ".subline p:nth-of-type(2)", "key": "heroP2", "html": true}, {"selector": ".hero-slogans div:nth-child(1)", "key": "heroS1"}, {"selector": ".hero-slogans div:nth-child(2)", "key": "heroS2"}, {"selector": ".hero-slogans div:nth-child(3)", "key": "heroS3"}, {"selector": ".hero-slogans div:nth-child(4)", "key": "heroS4"}, {"selector": ".hero-actions .btn.btn-dark", "key": "heroBtnPackages"}, {"selector": ".hero-actions .btn.btn-light", "key": "heroBtnContact"}, {"selector": ".hero-copy-box h3", "key": "heroBoxTitle"}, {"selector": ".hero-copy-box p:nth-of-type(1)", "key": "heroBoxP1"}, {"selector": ".hero-copy-box p:nth-of-type(2)", "key": "heroBoxP2"}, {"selector": ".promo-kicker", "key": "promoKicker", "html": true}, {"selector": ".promo-title", "key": "promoTitle", "html": true}, {"selector": ".promo-copy", "key": "promoCopy"}, {"selector": ".promo-badges span:nth-child(1)", "key": "promoB1"}, {"selector": ".promo-badges span:nth-child(2)", "key": "promoB2"}, {"selector": ".promo-badges span:nth-child(3)", "key": "promoB3"}, {"selector": ".stats .feature-card:nth-child(1) span", "key": "stat1Label"}, {"selector": ".stats .feature-card:nth-child(2) strong", "key": "stat2Value"}, {"selector": ".stats .feature-card:nth-child(2) span", "key": "stat2Label"}, {"selector": ".stats .feature-card:nth-child(3) strong", "key": "stat3Value"}, {"selector": ".stats .feature-card:nth-child(3) span", "key": "stat3Label"}, {"selector": "section:nth-of-type(4) .section-card:nth-child(1) h2", "key": "aboutTitle", "html": true}, {"selector": "section:nth-of-type(4) .section-card:nth-child(1) .section-head p", "key": "aboutP1", "html": true}, {"selector": "section:nth-of-type(4) .section-card:nth-child(1) > p", "key": "aboutP2"}, {"selector": "section:nth-of-type(4) .section-card:nth-child(1) .section-list li:nth-child(1)", "key": "aboutL1"}, {"selector": "section:nth-of-type(4) .section-card:nth-child(1) .section-list li:nth-child(2)", "key": "aboutL2"}, {"selector": "section:nth-of-type(4) .section-card:nth-child(1) .section-list li:nth-child(3)", "key": "aboutL3"}, {"selector": "section:nth-of-type(4) .section-card:nth-child(1) .section-list li:nth-child(4)", "key": "aboutL4"}, {"selector": "section:nth-of-type(4) .section-card:nth-child(2) h2", "key": "partnerTitle"}, {"selector": "section:nth-of-type(4) .section-card:nth-child(2) p:nth-of-type(1)", "key": "partnerP1", "html": true}, {"selector": "section:nth-of-type(4) .section-card:nth-child(2) p:nth-of-type(2)", "key": "partnerP2"}, {"selector": "section:nth-of-type(4) .section-card:nth-child(2) .section-list li:nth-child(1)", "key": "partnerL1"}, {"selector": "section:nth-of-type(4) .section-card:nth-child(2) .section-list li:nth-child(2)", "key": "partnerL2"}, {"selector": "section:nth-of-type(4) .section-card:nth-child(2) .section-list li:nth-child(3)", "key": "partnerL3"}, {"selector": "section:nth-of-type(4) .section-card:nth-child(2) .section-list li:nth-child(4)", "key": "partnerL4"}, {"selector": "section:nth-of-type(5) h2", "key": "bestTitle"}, {"selector": "section:nth-of-type(5) .section-head p", "key": "bestP"}, {"selector": "section:nth-of-type(5) .service-card:nth-child(1) strong", "key": "svc1T"}, {"selector": "section:nth-of-type(5) .service-card:nth-child(1) p", "key": "svc1P"}, {"selector": "section:nth-of-type(5) .service-card:nth-child(2) strong", "key": "svc2T"}, {"selector": "section:nth-of-type(5) .service-card:nth-child(2) p", "key": "svc2P"}, {"selector": "section:nth-of-type(5) .service-card:nth-child(3) strong", "key": "svc3T"}, {"selector": "section:nth-of-type(5) .service-card:nth-child(3) p", "key": "svc3P"}, {"selector": "section:nth-of-type(5) .service-card:nth-child(4) strong", "key": "svc4T"}, {"selector": "section:nth-of-type(5) .service-card:nth-child(4) p", "key": "svc4P"}, {"selector": "#eye-photos h2", "key": "eyeTitle"}, {"selector": "#eye-photos .section-head p", "key": "eyeP", "html": true}, {"selector": "#pigeon-photos h2", "key": "pigeonTitle"}, {"selector": "#pigeon-photos .section-head p", "key": "pigeonP", "html": true}, {"selector": "#video h2", "key": "videoTitle"}, {"selector": "#video .video-copy > p", "key": "videoP", "html": true}, {"selector": "#video .video-copy li:nth-child(1)", "key": "videoL1"}, {"selector": "#video .video-copy li:nth-child(2)", "key": "videoL2"}, {"selector": "#video .video-copy li:nth-child(3)", "key": "videoL3"}, {"selector": "#video .video-copy li:nth-child(4)", "key": "videoL4", "html": true}, {"selector": "#packages h2", "key": "packagesTitle"}, {"selector": "#packages .section-head p", "key": "packagesP"}, {"selector": "#packages .package-card:nth-child(1) h3", "key": "pkg1T"}, {"selector": "#packages .package-card:nth-child(1) .vat-note", "key": "vatNote"}, {"selector": "#packages .package-card:nth-child(1) p", "key": "pkg1P"}, {"selector": "#packages .package-card:nth-child(1) .package-list li:nth-child(1)", "key": "pkg1L1"}, {"selector": "#packages .package-card:nth-child(1) .package-list li:nth-child(2)", "key": "pkg1L2"}, {"selector": "#packages .package-card:nth-child(1) .package-list li:nth-child(3)", "key": "pkg1L3"}, {"selector": "#packages .package-card:nth-child(2) .badge", "key": "badgeMost"}, {"selector": "#packages .package-card:nth-child(2) h3", "key": "pkg2T"}, {"selector": "#packages .package-card:nth-child(2) .vat-note", "key": "vatNote"}, {"selector": "#packages .package-card:nth-child(2) p", "key": "pkg2P"}, {"selector": "#packages .package-card:nth-child(2) .package-list li:nth-child(1)", "key": "pkg2L1"}, {"selector": "#packages .package-card:nth-child(2) .package-list li:nth-child(2)", "key": "pkg2L2"}, {"selector": "#packages .package-card:nth-child(2) .package-list li:nth-child(3)", "key": "pkg2L3"}, {"selector": "#packages .package-card:nth-child(3) h3", "key": "pkg3T"}, {"selector": "#packages .package-card:nth-child(3) .vat-note", "key": "vatNote"}, {"selector": "#packages .package-card:nth-child(3) p", "key": "pkg3P"}, {"selector": "#packages .package-card:nth-child(3) .package-list li:nth-child(1)", "key": "pkg3L1"}, {"selector": "#packages .package-card:nth-child(3) .package-list li:nth-child(2)", "key": "pkg3L2"}, {"selector": "#packages .package-card:nth-child(3) .package-list li:nth-child(3)", "key": "pkg3L3"}, {"selector": "#packages .packages-cta p", "key": "packagesCtaP"}, {"selector": "#packages .packages-cta .btn", "key": "packagesCtaBtn"}, {"selector": "section:nth-of-type(10) .section-card:nth-child(1) h2", "key": "chooseTitle"}, {"selector": "section:nth-of-type(10) .section-card:nth-child(1) > p", "key": "chooseP", "html": true}, {"selector": "section:nth-of-type(10) .section-card:nth-child(1) .section-list li:nth-child(1)", "key": "chooseL1"}, {"selector": "section:nth-of-type(10) .section-card:nth-child(1) .section-list li:nth-child(2)", "key": "chooseL2"}, {"selector": "section:nth-of-type(10) .section-card:nth-child(1) .section-list li:nth-child(3)", "key": "chooseL3"}, {"selector": "section:nth-of-type(10) .section-card:nth-child(1) .section-list li:nth-child(4)", "key": "chooseL4"}, {"selector": "section:nth-of-type(10) .section-card:nth-child(1) .section-list li:nth-child(5)", "key": "chooseL5"}, {"selector": "section:nth-of-type(10) .section-card:nth-child(2) h2", "key": "webTitle"}, {"selector": "section:nth-of-type(10) .section-card:nth-child(2) > p", "key": "webP"}, {"selector": "section:nth-of-type(10) .section-card:nth-child(2) .section-list li:nth-child(1)", "key": "webL1"}, {"selector": "section:nth-of-type(10) .section-card:nth-child(2) .section-list li:nth-child(2)", "key": "webL2"}, {"selector": "section:nth-of-type(10) .section-card:nth-child(2) .section-list li:nth-child(3)", "key": "webL3"}, {"selector": "section:nth-of-type(10) .section-card:nth-child(2) .section-list li:nth-child(4)", "key": "webL4"}, {"selector": "#partners h2", "key": "partnersTitle"}, {"selector": "#partners .section-head p", "key": "partnersP"}, {"selector": "#contact h2", "key": "contactTitle", "html": true}, {"selector": "#contact > .container .contact-card > p", "key": "contactP", "html": true}, {"selector": "#contact .contact-item:nth-child(1) strong", "key": "contactWhatsapp"}, {"selector": "#contact .contact-item:nth-child(1) .contact-link-label", "key": "contactWhatsappBtn"}, {"selector": "#contact .contact-item:nth-child(2) strong", "key": "contactEmail"}, {"selector": "#contact .contact-item:nth-child(2) .contact-link-label", "key": "contactEmailBtn"}, {"selector": "#contact .contact-item:nth-child(3) strong", "key": "contactFacebook"}, {"selector": "#contact .contact-item:nth-child(3) .contact-link-label", "key": "contactFacebookBtn"}, {"selector": "#lightboxPlaceholder strong", "key": "lightboxPreviewTitle"}, {"selector": "#lightboxPlaceholder span", "key": "lightboxPreviewText"}, {"selector": "footer .footer-note", "key": "footerNote", "html": true}, {"selector": "footer .footer-grid > div:nth-child(2) h4", "key": "footerQuick"}, {"selector": "footer .footer-grid > div:nth-child(2) li:nth-child(1) a", "key": "footerHomeEye"}, {"selector": "footer .footer-grid > div:nth-child(2) li:nth-child(2) a", "key": "footerHomePigeon"}, {"selector": "footer .footer-grid > div:nth-child(2) li:nth-child(3) a", "key": "footerHomeVideo"}, {"selector": "footer .footer-grid > div:nth-child(2) li:nth-child(4) a", "key": "footerHomePackages"}, {"selector": "footer .footer-grid > div:nth-child(3) h4", "key": "footerContact"}, {"selector": "footer .copyright", "key": "copyright"}];
+  const htmlEl = document.documentElement;
+  const body = document.body;
+  const langToggle = document.getElementById('langToggle');
+  const metaDesc = document.querySelector('meta[name="description"]');
+
+  function setElementContent(el, value, useHtml) {
+    if (!el) return;
+    if (useHtml) el.innerHTML = value;
+    else el.textContent = value;
+  }
+
+  function applyLanguage(lang) {
+    const dict = translations[lang] || translations.en;
+    selectorMap.forEach(item => {
+      const el = document.querySelector(item.selector);
+      if (!el) return;
+      if (item.attr) {
+        el.setAttribute(item.attr, dict[item.key] || '');
+      } else {
+        setElementContent(el, dict[item.key] || '', !!item.html);
+      }
+    });
+
+    document.title = dict.pageTitle;
+    if (metaDesc) metaDesc.setAttribute('content', dict.pageDesc);
+
+    htmlEl.lang = lang;
+    htmlEl.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    body.classList.toggle('lang-ar', lang === 'ar');
+
+    if (langToggle) {
+      langToggle.textContent = lang === 'ar' ? 'EN' : 'AR';
+      langToggle.classList.toggle('active', lang === 'ar');
+      langToggle.setAttribute('aria-label', lang === 'ar' ? 'Switch to English' : 'التبديل إلى العربية');
+      langToggle.setAttribute('title', lang === 'ar' ? 'Switch to English' : 'العربية');
+    }
+
+    localStorage.setItem('legacyPigeonLang', lang);
+  }
+
+  const saved = localStorage.getItem('legacyPigeonLang') || 'en';
+  applyLanguage(saved);
+
+  if (langToggle) {
+    langToggle.addEventListener('click', function() {
+      const nextLang = htmlEl.lang === 'ar' ? 'en' : 'ar';
+      applyLanguage(nextLang);
+    });
+  }
+
+  // Expose for debugging if needed
+  window.applyLegacyPigeonLanguage = applyLanguage;
+  document.querySelectorAll('.partner-item').forEach(item => {
+    item.setAttribute('role', 'button');
+    item.setAttribute('tabindex', '0');
+    const press = () => {
+      item.classList.add('is-pressed');
+      setTimeout(() => item.classList.remove('is-pressed'), 180);
+    };
+    item.addEventListener('click', press);
+    item.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        press();
+      }
+    });
+  });
+
+})();
+</script>
+<script>
+    (function () {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightboxImage');
+      const lightboxPlaceholder = document.getElementById('lightboxPlaceholder');
+      const lightboxTitle = document.getElementById('lightboxTitle');
+      const lightboxCounter = document.getElementById('lightboxCounter');
+      const prevBtn = lightbox.querySelector('.lightbox-arrow.prev');
+      const nextBtn = lightbox.querySelector('.lightbox-arrow.next');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      const backdrop = lightbox.querySelector('[data-close-lightbox]');
+      const items = Array.from(document.querySelectorAll('.gallery-item, .promo-visual[data-full], .hero-feature-trigger[data-full]'));
+      let currentGallery = [];
+      let currentIndex = 0;
+
+      function getSource(item) {
+        return item.dataset.full || (item.querySelector('img') ? item.querySelector('img').src : '');
+      }
+
+      function renderLightbox() {
+        const item = currentGallery[currentIndex];
+        if (!item) return;
+        const src = getSource(item);
+        const title = item.dataset.title || item.querySelector('span')?.textContent || 'Gallery Image';
+        lightboxTitle.textContent = title;
+        lightboxCounter.textContent = (currentIndex + 1) + ' / ' + currentGallery.length;
+
+        if (src) {
+          lightboxImage.src = src;
+          lightboxImage.style.display = 'block';
+          lightboxPlaceholder.style.display = 'none';
+        } else {
+          lightboxImage.removeAttribute('src');
+          lightboxImage.style.display = 'none';
+          lightboxPlaceholder.style.display = 'flex';
+        }
+      }
+
+      function openLightbox(item) {
+        const group = item.dataset.gallery || 'default';
+        currentGallery = items.filter(el => (el.dataset.gallery || 'default') === group);
+        currentIndex = currentGallery.indexOf(item);
+        if (currentIndex < 0) currentIndex = 0;
+        renderLightbox();
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function goNext() {
+        if (!currentGallery.length) return;
+        currentIndex = (currentIndex + 1) % currentGallery.length;
+        renderLightbox();
+      }
+
+      function goPrev() {
+        if (!currentGallery.length) return;
+        currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+        renderLightbox();
+      }
+
+      items.forEach(item => {
+        item.addEventListener('click', function () {
+          openLightbox(item);
+        });
+      });
+
+      nextBtn.addEventListener('click', goNext);
+      prevBtn.addEventListener('click', goPrev);
+      closeBtn.addEventListener('click', closeLightbox);
+      backdrop.addEventListener('click', closeLightbox);
+
+      document.addEventListener('keydown', function (event) {
+        if (!lightbox.classList.contains('open')) return;
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowRight') goNext();
+        if (event.key === 'ArrowLeft') goPrev();
+      });
+    })();
+  </script><script>
+    (function () {
+      if (window.top !== window.self) {
+        try {
+          window.top.location = window.self.location;
+        } catch (error) {
+          window.self.location = window.self.location;
+        }
+      }
+
+      document.addEventListener('contextmenu', function (event) {
+        event.preventDefault();
+      }, { passive: false });
+
+      document.addEventListener('dragstart', function (event) {
+        if (event.target && (event.target.closest('img') || event.target.closest('video'))) {
+          event.preventDefault();
+        }
+      }, { passive: false });
+
+      document.addEventListener('selectstart', function (event) {
+        if (event.target && (event.target.closest('img') || event.target.closest('video'))) {
+          event.preventDefault();
+        }
+      }, { passive: false });
+
+      document.addEventListener('copy', function (event) {
+        const sel = window.getSelection ? String(window.getSelection()) : '';
+        if (!sel) return;
+        const active = document.activeElement;
+        if (active && (active.tagName === 'IMG' || active.tagName === 'VIDEO')) {
+          event.preventDefault();
+        }
+      });
+
+      document.querySelectorAll('img, video').forEach(function (el) {
+        el.setAttribute('draggable', 'false');
+        el.addEventListener('contextmenu', function (event) {
+          event.preventDefault();
+        }, { passive: false });
+      });
+
+      document.addEventListener('keydown', function (event) {
+        const key = (event.key || '').toLowerCase();
+        const blocked =
+          key === 'f12' ||
+          ((event.ctrlKey || event.metaKey) && ['s', 'u', 'p'].includes(key)) ||
+          ((event.ctrlKey || event.metaKey) && event.shiftKey && ['i', 'j', 'c', 's'].includes(key));
+
+        if (blocked) {
+          event.preventDefault();
+          event.stopPropagation();
+          return false;
+        }
+      }, true);
+    })();
+</script>
+
+<script>
+(function () {
+  const targets = document.querySelectorAll('.hero-card, .hero-panel, .feature-card, .section-card, .service-card, .gallery-grid > *, .video-box, .video-copy, .package-card, .partner-strip, .contact-card, .footer-box, .promo-glass');
+  targets.forEach((el, index) => {
+    el.classList.add('reveal');
+    el.style.transitionDelay = Math.min(index * 35, 240) + 'ms';
+  });
+
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  targets.forEach(el => io.observe(el));
+  document.querySelectorAll('.partner-item').forEach(item => {
+    item.setAttribute('role', 'button');
+    item.setAttribute('tabindex', '0');
+    const press = () => {
+      item.classList.add('is-pressed');
+      setTimeout(() => item.classList.remove('is-pressed'), 180);
+    };
+    item.addEventListener('click', press);
+    item.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        press();
+      }
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
