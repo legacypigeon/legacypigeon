@@ -1,6 +1,7 @@
-index.html
-eye-photos.html
-pigeon-photos.html
-video.html
-packages.html
-contact.html
+https://www.legacypigeon.com/
+https://www.legacypigeon.com/eye-photos/
+https://www.legacypigeon.com/pigeon-photos/
+https://www.legacypigeon.com/video/
+https://www.legacypigeon.com/packages/
+https://www.legacypigeon.com/about/
+https://www.legacypigeon.com/contact/
