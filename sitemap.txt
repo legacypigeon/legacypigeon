@@ -1,6 +1,6 @@
-index.html
-eye-photos.html
-pigeon-photos.html
-video.html
-packages.html
-contact.html
+/
+/eye-photos/
+/pigeon-photos/
+/video/
+/packages/
+/contact/
