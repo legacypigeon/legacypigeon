@@ -2049,6 +2049,12 @@
   @media (max-width: 960px){.about-premium-grid{grid-template-columns:1fr;} .about-premium-title{max-width:none;}}
   @media (max-width: 640px){.about-premium-card{padding:24px 22px;} .about-premium-title{font-size:2rem;} .about-premium-copy{font-size:.96rem;} .about-premium-badges a{padding:10px 14px; font-size:.9rem;}}
 </style>
+
+<style id="preview-clone-click-fix">
+  .portfolio-teaser .preview-item.preview-clone{cursor:pointer !important;}
+  .portfolio-teaser .preview-item.preview-clone:hover{transform:translateY(-3px) scale(1.012) !important; box-shadow:0 24px 50px rgba(8,27,75,.11) !important; border-color:rgba(25,152,234,.28) !important;}
+  .portfolio-teaser .preview-item.preview-clone:hover img{transform:scale(1.04) !important; filter:saturate(1.04) !important;}
+</style>
 </head>
 <body class="about-only">
 <header class="topbar">
@@ -2880,5 +2886,43 @@ document.querySelectorAll('.eye-slider-cta, .pigeon-slider-cta').forEach((el) =>
     start();
   });
 })();
-</script></body>
+</script>
+<script id="preview-clone-click-fix-script">
+(function () {
+  const tracks = document.querySelectorAll('.portfolio-teaser .preview-track');
+  tracks.forEach((track) => {
+    const originals = Array.from(track.querySelectorAll('.gallery-item.has-image:not(.preview-clone)'));
+    const clones = Array.from(track.querySelectorAll('.preview-item.preview-clone'));
+    if (!originals.length || !clones.length) return;
+
+    clones.forEach((clone, index) => {
+      const source = originals[index % originals.length];
+      if (!source) return;
+
+      clone.style.cursor = 'pointer';
+      clone.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        source.click();
+      });
+
+      const warm = function () {
+        const full = source.dataset.full || '';
+        if (!full) return;
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.as = 'image';
+        link.href = full;
+        document.head.appendChild(link);
+        clone.removeEventListener('mouseenter', warm);
+        clone.removeEventListener('touchstart', warm);
+      };
+
+      clone.addEventListener('mouseenter', warm, { passive: true });
+      clone.addEventListener('touchstart', warm, { passive: true });
+    });
+  });
+})();
+</script>
+</body>
 </html>
