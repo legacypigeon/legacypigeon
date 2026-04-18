@@ -1,6 +1,0 @@
-/
-/eye-photos/
-/pigeon-photos/
-/video/
-/packages/
-/contact/
